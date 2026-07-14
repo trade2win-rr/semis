@@ -1,29 +1,46 @@
-# Semiconductor Intelligence Map
+# Semiconductor Intelligence Map — Research v1.0
 
-A static research site mapping publicly traded semiconductor companies by bottleneck control, strategic position, AI exposure, earnings setup, valuation discrepancy, convexity, and dependency relationships.
+A static, GitHub-Pages-ready semiconductor industry research database.
+
+## What is included
+
+- 57 publicly traded companies mapped across the semiconductor stack
+- 16 deep-research company profiles with dated financial snapshots and primary-source links
+- Strategic-position, bottleneck, earnings-setup, discrepancy and convexity scores
+- Current industry cycle dashboard
+- Dependency / event-transmission map
+- Upcoming catalyst calendar
+- Search, filtering, sorting and company detail dialogs
 
 ## Files
 
 - `index.html` — page structure
 - `styles.css` — visual design
-- `data.js` — company research data and scores
-- `app.js` — filtering, sorting, rankings, detail dialog and dependency map
-- `.nojekyll` — tells GitHub Pages to serve the files as-is
+- `data.js` — broad 57-company industry map and dependency graph
+- `research.js` — dated financial snapshots, cycle signals and catalyst calendar
+- `app.js` — search, filtering, rankings and interactive rendering
 
-## Publish with GitHub Pages
+## Publish on GitHub Pages
 
-1. Create a new GitHub repository, for example `semiconductor-intelligence-map`.
-2. Upload all files in this folder to the repository root.
-3. Open the repository's **Settings** → **Pages**.
+1. Create a public GitHub repository.
+2. Upload all files from this folder to the repository root.
+3. Go to **Settings → Pages**.
 4. Under **Build and deployment**, choose **Deploy from a branch**.
-5. Select the `main` branch and `/ (root)` folder, then save.
-6. GitHub will publish the site at a URL similar to:
-   `https://YOUR-USERNAME.github.io/semiconductor-intelligence-map/`
+5. Select **main** and **/(root)**, then save.
 
-## Editing the research
+The site is fully static: no server, database or API key is required.
 
-Most content lives in `data.js`. Add or edit company objects there. The table, rankings, summary cards and company detail modal update automatically.
+## Updating the research
 
-## Important research note
+Most ongoing updates happen in `research.js`:
 
-The current release is a curated framework, not a live financial database. Scores are subjective research judgments and should be updated as business conditions, valuation, earnings estimates and competitive positions change.
+- Update company financial snapshots after earnings.
+- Update the `cycleSignals` array when new industry data arrives.
+- Add or remove items from the `catalysts` array.
+- Keep the `asOf` date in `researchMeta` current.
+
+The broad qualitative company map is maintained in `data.js`.
+
+## Important
+
+Financial figures are point-in-time research snapshots. Scores, valuation labels and opportunity rankings are research judgments, not investment recommendations. Verify all figures before trading or publishing.

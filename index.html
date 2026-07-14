@@ -16,8 +16,8 @@
         <p class="subtitle">Who owns the bottleneck — and what is the market mispricing?</p>
       </div>
       <div class="asof-card">
-        <span>Research framework</span>
-        <strong>v0.1 · Jul 14, 2026</strong>
+        <span>Research database</span>
+        <strong>v1.0 research · Jul 14, 2026</strong>
         <small>Scores are research judgments, not investment advice.</small>
       </div>
     </div>
@@ -41,13 +41,25 @@
     </section>
 
     <nav class="tabs" aria-label="Primary views">
-      <button class="tab active" data-tab="companies">Company Map</button>
+      <button class="tab active" data-tab="research">Research Dashboard</button>
+      <button class="tab" data-tab="companies">Company Map</button>
       <button class="tab" data-tab="bottlenecks">Bottleneck Rankings</button>
+      <button class="tab" data-tab="cycle">Cycle Dashboard</button>
       <button class="tab" data-tab="dependencies">Dependency Map</button>
-      <button class="tab" data-tab="methodology">Methodology</button>
+      <button class="tab" data-tab="catalysts">Catalyst Calendar</button>
+      <button class="tab" data-tab="methodology">Methodology & Sources</button>
     </nav>
 
-    <section id="companies" class="tab-panel active">
+
+    <section id="research" class="tab-panel active">
+      <div class="section-intro panel research-intro">
+        <div><div class="eyebrow">DEEP RESEARCH LAYER</div><h2>Current financial signals + bottleneck analysis</h2></div>
+        <p id="researchMetaText"></p>
+      </div>
+      <div id="researchLeaders" class="research-grid"></div>
+    </section>
+
+    <section id="companies" class="tab-panel">
       <div class="controls panel">
         <input id="searchInput" type="search" placeholder="Search company, ticker, layer, thesis…" aria-label="Search companies" />
         <select id="layerFilter" aria-label="Filter by industry layer"><option value="all">All layers</option></select>
@@ -106,6 +118,15 @@
       <div id="bottleneckGrid" class="rank-grid"></div>
     </section>
 
+
+    <section id="cycle" class="tab-panel">
+      <div class="section-intro panel">
+        <div><div class="eyebrow">CURRENT INDUSTRY PULSE</div><h2>Cycle dashboard</h2></div>
+        <p>These indicators answer a different question from moat analysis: is the earnings environment accelerating, normalizing or rolling over?</p>
+      </div>
+      <div id="cycleGrid" class="cycle-grid"></div>
+    </section>
+
     <section id="dependencies" class="tab-panel">
       <div class="section-intro panel">
         <div>
@@ -122,6 +143,15 @@
       </div>
     </section>
 
+
+    <section id="catalysts" class="tab-panel">
+      <div class="section-intro panel">
+        <div><div class="eyebrow">EVENT TRANSMISSION</div><h2>Upcoming catalyst calendar</h2></div>
+        <p>Each event is included because its read-through can extend beyond the reporting company into suppliers, customers or competing architectures.</p>
+      </div>
+      <div id="catalystList" class="catalyst-list"></div>
+    </section>
+
     <section id="methodology" class="tab-panel">
       <div class="method-grid">
         <article class="panel method-card"><span>01</span><h3>Strategic Position</h3><p>How hard is the company to replace? Bottleneck control, technology lead, switching costs, pricing power and downstream dependence.</p></article>
@@ -133,7 +163,9 @@
         <h2>Scoring logic</h2>
         <p><strong>Opportunity score</strong> is a weighted research heuristic: 30% strategic position, 25% earnings setup, 25% valuation discrepancy and 20% convexity. It is not a price target and should not be treated as a mechanical buy signal.</p>
         <p><strong>Bottleneck score</strong> is shown separately because a monopoly-like asset can still be a poor stock at the wrong valuation, while a cyclical company with a lower moat can offer a better setup at the right point in the cycle.</p>
-        <p><strong>Current version:</strong> this first build is a curated research framework with 50+ public companies. The next research pass should add live/periodic financial data, source links, estimate revisions, valuation history and company-specific catalysts.</p>
+        <p><strong>Current version:</strong> 57 companies are mapped across the stack, with 16 core names receiving a deeper research layer using the latest official company-reported financials available before the July 14, 2026 close. Each deep-dive links to its primary source. Market prices are point-in-time snapshots and are not auto-updating.</p>
+        <p><strong>Valuation labels:</strong> qualitative judgments that combine market expectations, business quality, cycle position and execution risk. They are intentionally separate from the strategic score so a great business can still rank poorly as a stock setup.</p>
+        <p><strong>Source policy:</strong> company financial snapshots use issuer investor-relations materials; industry-cycle indicators use SIA, WSTS/SEMI or issuer data. Research judgments remain the author's synthesis.</p>
       </article>
     </section>
   </main>
@@ -148,6 +180,7 @@
   </dialog>
 
   <script src="data.js"></script>
+  <script src="research.js"></script>
   <script src="app.js"></script>
 </body>
 </html>

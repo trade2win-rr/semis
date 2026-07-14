@@ -61,8 +61,22 @@ function renderTable(){
 
 function openCompany(ticker){
   const c = companies.find(x=>x.ticker===ticker); if(!c) return;
+  const r = typeof researchCompanies !== 'undefined' ? researchCompanies[ticker] : null;
+  const financials = r ? `<div class="dialog-financials">
+      <div class="snapshot"><strong>${r.revenue}</strong><span>${r.latestPeriod} revenue</span></div>
+      <div class="snapshot"><strong>${r.growth}</strong><span>reported growth signal</span></div>
+      <div class="snapshot"><strong>${r.margin}</strong><span>profitability / mix</span></div>
+      <div class="snapshot"><strong>${r.price}</strong><span>Jul. 14, 2026 price snapshot</span></div>
+      <div class="snapshot"><strong>${r.valuation}</strong><span>valuation lens</span></div>
+      <div class="snapshot"><strong>${r.nextCatalyst}</strong><span>next catalyst</span></div>
+    </div>` : '';
+  const deep = r ? `<div class="deep-section"><h3>Latest financial signal</h3><p>${r.financialSignal}</p></div>
+    <div class="deep-section"><h3>What to monitor</h3><ul class="monitor-list">${r.monitor.map(x=>`<li>${x}</li>`).join('')}</ul></div>
+    <div class="deep-section"><h3>Read-through</h3><p>${r.readThrough}</p></div>
+    <div class="deep-section"><h3>Primary source</h3><a class="source-link deep-source" href="${r.source}" target="_blank" rel="noopener">${r.sourceLabel} ↗</a></div>` : `<div class="deep-section"><p class="muted">This company is mapped in the broad industry database but has not yet received the v1.0 deep-research financial layer.</p></div>`;
   $('#dialogContent').innerHTML = `<div class="dialog-body">
-    <div class="eyebrow">${c.layer}</div><h2>${c.name}</h2><div class="dialog-sub"><span class="ticker">${c.ticker}</span> · ${c.cycle} · Awareness: ${c.awareness}</div>
+    <div class="eyebrow">${c.layer}${r?' · DEEP RESEARCH':''}</div><h2>${c.name}</h2><div class="dialog-sub"><span class="ticker">${c.ticker}</span> · ${c.cycle} · Awareness: ${c.awareness}</div>
+    ${financials}
     <div class="dialog-scores">
       <div class="dialog-score"><strong>${c.bottleneck}</strong><span>Bottleneck</span></div>
       <div class="dialog-score"><strong>${c.strategic}</strong><span>Strategic</span></div>
@@ -71,6 +85,7 @@ function openCompany(ticker){
       <div class="dialog-score"><strong>${c.discrepancy}</strong><span>Discrepancy</span></div>
       <div class="dialog-score"><strong>${opportunity(c).toFixed(1)}</strong><span>Opportunity</span></div>
     </div>
+    ${deep}
     <div class="dialog-section"><h3>What it owns</h3><p>${c.owns}</p></div>
     <div class="dialog-section"><h3>Investment thesis</h3><p>${c.thesis}</p></div>
     <div class="dialog-section"><h3>The key question</h3><p>${c.question}</p></div>
@@ -111,6 +126,32 @@ function showDependency(id){
   $$('[data-open]').forEach(x=>x.addEventListener('click',()=>openCompany(x.dataset.open)));
 }
 
+
+function renderResearch(){
+  if(typeof researchCompanies === 'undefined') return;
+  $('#researchMetaText').textContent = `${researchMeta.deepDiveCount} core names have dated financial snapshots and primary-source links. ${researchMeta.methodologyNote}`;
+  const rows = Object.entries(researchCompanies).map(([ticker,r])=>({c:companies.find(x=>x.ticker===ticker),r})).filter(x=>x.c)
+    .sort((a,b)=>opportunity(b.c)-opportunity(a.c));
+  $('#researchLeaders').innerHTML = rows.map(({c,r})=>`<article class="panel research-card" data-ticker="${c.ticker}">
+    <div class="research-card-head"><div><div class="eyebrow">${c.layer}</div><h3>${c.name}</h3><span class="ticker">${c.ticker}</span></div><div class="research-price">${r.price}<small>Jul. 14 snapshot</small></div></div>
+    <div class="snapshot-grid"><div class="snapshot"><strong>${r.revenue}</strong><span>${r.latestPeriod}</span></div><div class="snapshot"><strong>${r.growth}</strong><span>growth signal</span></div><div class="snapshot"><strong>${opportunity(c).toFixed(1)}/10</strong><span>opportunity score</span></div></div>
+    <p class="research-signal">${r.financialSignal}</p>
+    <div class="research-footer"><span class="valuation-tag">${r.valuation}</span><a class="source-link" href="${r.source}" target="_blank" rel="noopener" onclick="event.stopPropagation()">Primary source ↗</a></div>
+  </article>`).join('');
+  $$('#researchLeaders .research-card').forEach(x=>x.addEventListener('click',()=>openCompany(x.dataset.ticker)));
+}
+
+function renderCycle(){
+  if(typeof cycleSignals === 'undefined') return;
+  $('#cycleGrid').innerHTML = cycleSignals.map(s=>`<article class="panel cycle-card"><div class="cycle-top"><h3>${s.name}</h3><span class="status-chip">${s.status}</span></div><div class="cycle-value">${s.value}</div><div class="cycle-change">${s.change}</div><p>${s.detail}</p><p class="implication"><strong>Investment read:</strong> ${s.implication}</p><a class="source-link" href="${s.source}" target="_blank" rel="noopener">Source ↗</a></article>`).join('');
+}
+
+function renderCatalysts(){
+  if(typeof catalysts === 'undefined') return;
+  const fmt = d => new Date(d+'T12:00:00').toLocaleDateString('en-US',{month:'short',day:'numeric'});
+  $('#catalystList').innerHTML = catalysts.map(x=>`<article class="panel catalyst-item"><div class="catalyst-date">${fmt(x.date)}</div><span class="ticker">${x.ticker}</span><div class="catalyst-event"><strong>${x.event}</strong><span>${x.why}</span></div><a class="source-link" href="${x.source}" target="_blank" rel="noopener">Source ↗</a></article>`).join('');
+}
+
 $$('.tab').forEach(btn=>btn.addEventListener('click',()=>{
   $$('.tab').forEach(x=>x.classList.remove('active')); $$('.tab-panel').forEach(x=>x.classList.remove('active'));
   btn.classList.add('active'); $('#'+btn.dataset.tab).classList.add('active');
@@ -119,4 +160,4 @@ $$('.tab').forEach(btn=>btn.addEventListener('click',()=>{
 $('#dialogClose').addEventListener('click',()=>$('#companyDialog').close());
 $('#companyDialog').addEventListener('click',e=>{ if(e.target===$('#companyDialog')) $('#companyDialog').close(); });
 
-populateSummary(); populateFilters(); renderTable(); renderBottlenecks(); renderDependencies();
+populateSummary(); populateFilters(); renderResearch(); renderTable(); renderBottlenecks(); renderCycle(); renderDependencies(); renderCatalysts();
