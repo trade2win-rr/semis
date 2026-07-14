@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Semiconductor Intelligence Map — public semiconductor companies ranked by bottleneck control, strategic position, AI exposure, cycle setup, valuation discrepancy and convexity." />
+  <title>Semiconductor Intelligence Map</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <div>
+        <div class="eyebrow">FULL DETAIL · TRACEABLE LOGIC · PUBLIC EQUITIES</div>
+        <h1>Semiconductor Intelligence Map</h1>
+        <p class="subtitle">Who owns the bottleneck — and what is the market mispricing?</p>
+      </div>
+      <div class="asof-card">
+        <span>Research framework</span>
+        <strong>v0.1 · Jul 14, 2026</strong>
+        <small>Scores are research judgments, not investment advice.</small>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="hero-grid">
+      <article class="hero-copy panel">
+        <h2>How to read the map</h2>
+        <p>The semiconductor industry is a chain of dependencies. A company can have strong demand and still capture little value; another can sit one layer upstream and own the scarce tool every winner must buy.</p>
+        <p>This map separates <strong>strategic position</strong> from <strong>stock opportunity</strong>. The highest-quality company is not automatically the best investment if the market already knows the story.</p>
+        <div class="legend-row">
+          <span class="pill accent">Bottleneck</span>
+          <span class="pill">Strategic Position</span>
+          <span class="pill">Earnings Setup</span>
+          <span class="pill">Discrepancy</span>
+          <span class="pill">Convexity</span>
+        </div>
+      </article>
+      <aside class="score-card panel" id="summaryCards"></aside>
+    </section>
+
+    <nav class="tabs" aria-label="Primary views">
+      <button class="tab active" data-tab="companies">Company Map</button>
+      <button class="tab" data-tab="bottlenecks">Bottleneck Rankings</button>
+      <button class="tab" data-tab="dependencies">Dependency Map</button>
+      <button class="tab" data-tab="methodology">Methodology</button>
+    </nav>
+
+    <section id="companies" class="tab-panel active">
+      <div class="controls panel">
+        <input id="searchInput" type="search" placeholder="Search company, ticker, layer, thesis…" aria-label="Search companies" />
+        <select id="layerFilter" aria-label="Filter by industry layer"><option value="all">All layers</option></select>
+        <select id="aiFilter" aria-label="Filter by AI exposure">
+          <option value="all">All AI exposure</option>
+          <option value="9">AI exposure 9–10</option>
+          <option value="7">AI exposure 7+</option>
+          <option value="5">AI exposure 5+</option>
+        </select>
+        <select id="sortSelect" aria-label="Sort companies">
+          <option value="opportunity">Sort: Opportunity</option>
+          <option value="bottleneck">Sort: Bottleneck</option>
+          <option value="strategic">Sort: Strategic position</option>
+          <option value="earnings">Sort: Earnings setup</option>
+          <option value="discrepancy">Sort: Valuation discrepancy</option>
+          <option value="convexity">Sort: Convexity</option>
+          <option value="ticker">Sort: Ticker</option>
+        </select>
+      </div>
+
+      <div class="table-shell panel">
+        <div class="table-meta"><span id="resultCount"></span><span>Click any row for the full thesis.</span></div>
+        <div class="table-scroll">
+          <table id="companyTable">
+            <thead>
+              <tr>
+                <th class="sticky-col">Company</th>
+                <th>Layer</th>
+                <th>What it owns</th>
+                <th>Bottleneck</th>
+                <th>Strategic</th>
+                <th>AI</th>
+                <th>Earnings</th>
+                <th>Discrepancy</th>
+                <th>Convexity</th>
+                <th>Opportunity</th>
+                <th>Awareness</th>
+                <th>Cycle</th>
+                <th>Key question</th>
+              </tr>
+            </thead>
+            <tbody id="companyRows"></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section id="bottlenecks" class="tab-panel">
+      <div class="section-intro panel">
+        <div>
+          <div class="eyebrow">SCARCITY FIRST</div>
+          <h2>Where the stack is hardest to route around</h2>
+        </div>
+        <p>A high bottleneck score means customers have few realistic substitutes, switching is difficult, and the supplier can capture economics when demand tightens.</p>
+      </div>
+      <div id="bottleneckGrid" class="rank-grid"></div>
+    </section>
+
+    <section id="dependencies" class="tab-panel">
+      <div class="section-intro panel">
+        <div>
+          <div class="eyebrow">EVENT TRANSMISSION</div>
+          <h2>Semiconductor dependency map</h2>
+        </div>
+        <p>Click a node to see which suppliers enable it and which public companies may receive a read-through when conditions change.</p>
+      </div>
+      <div class="dependency-layout">
+        <div class="dependency-map panel" id="dependencyMap"></div>
+        <aside class="dependency-detail panel" id="dependencyDetail">
+          <div class="empty-state">Select a node in the map.</div>
+        </aside>
+      </div>
+    </section>
+
+    <section id="methodology" class="tab-panel">
+      <div class="method-grid">
+        <article class="panel method-card"><span>01</span><h3>Strategic Position</h3><p>How hard is the company to replace? Bottleneck control, technology lead, switching costs, pricing power and downstream dependence.</p></article>
+        <article class="panel method-card"><span>02</span><h3>Earnings Setup</h3><p>What is happening to the business now? Demand acceleration, estimate direction, pricing, utilization, inventories and operating leverage.</p></article>
+        <article class="panel method-card"><span>03</span><h3>Valuation Discrepancy</h3><p>How large is the gap between business quality or earnings inflection and what appears to be embedded in market expectations?</p></article>
+        <article class="panel method-card"><span>04</span><h3>Convexity</h3><p>How asymmetric is the payoff? Upside from earnings, multiple, cycle recovery and optionality versus balance-sheet and structural downside.</p></article>
+      </div>
+      <article class="panel methodology-copy">
+        <h2>Scoring logic</h2>
+        <p><strong>Opportunity score</strong> is a weighted research heuristic: 30% strategic position, 25% earnings setup, 25% valuation discrepancy and 20% convexity. It is not a price target and should not be treated as a mechanical buy signal.</p>
+        <p><strong>Bottleneck score</strong> is shown separately because a monopoly-like asset can still be a poor stock at the wrong valuation, while a cyclical company with a lower moat can offer a better setup at the right point in the cycle.</p>
+        <p><strong>Current version:</strong> this first build is a curated research framework with 50+ public companies. The next research pass should add live/periodic financial data, source links, estimate revisions, valuation history and company-specific catalysts.</p>
+      </article>
+    </section>
+  </main>
+
+  <footer class="wrap site-footer">
+    <p>Built as a research framework for semiconductor public equities. Data and scores require ongoing verification. Not investment advice.</p>
+  </footer>
+
+  <dialog id="companyDialog">
+    <button class="dialog-close" id="dialogClose" aria-label="Close">×</button>
+    <div id="dialogContent"></div>
+  </dialog>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
