@@ -1,0 +1,42 @@
+const valuationFrameworks = {
+  'monopoly-quality': {label:'Monopoly / scarcity quality', primary:'Forward P/E + EV/Sales', anchors:['forwardPE','forwardEvSales','historicalPercentile'], description:'For a near-monopoly, the question is how much long-duration growth and scarcity are already capitalized. Current multiples must be compared with growth, backlog visibility and the company’s own history.'},
+  'equipment-scarcity': {label:'Scarce semiconductor equipment', primary:'Forward P/E + historical range', anchors:['forwardPE','evEbitdaTTM','historicalPercentile'], description:'Value on normalized forward earnings and free cash flow, then adjust for whether process complexity is structurally increasing tool intensity.'},
+  'equipment-cycle': {label:'Cyclical equipment', primary:'Forward P/E + cycle position', anchors:['forwardPE','evEbitdaTTM','historicalPercentile'], description:'Do not rely on trailing P/E near cycle troughs or peaks. Forward earnings, order momentum, WFE intensity and historical mid-cycle multiples matter more.'},
+  'test-complexity': {label:'Test complexity', primary:'Forward P/E + growth durability', anchors:['forwardPE','revenueGrowthFY1','historicalPercentile'], description:'Test names can rerate when test intensity per device rises structurally. Compare forward earnings with the durability of AI/HBM test demand.'},
+  'packaging-complexity': {label:'Advanced packaging complexity', primary:'Forward EV/Sales + P/E', anchors:['forwardEvSales','forwardPE','revenueGrowthFY1'], description:'High growth can justify premium sales multiples, but capacity digestion and customer concentration make estimate revisions especially important.'},
+  'packaging-volume': {label:'OSAT / packaging volume', primary:'EV/EBITDA + FCF yield', anchors:['evEbitdaTTM','fcfYield','revenueGrowthFY1'], description:'Lower-margin packaging businesses should be valued on cash conversion, utilization and return on capital rather than premium semiconductor P/E comparisons.'},
+  'materials-cycle': {label:'Semiconductor materials', primary:'Forward P/E + utilization', anchors:['forwardPE','fcfYield','historicalPercentile'], description:'Recurring consumables can deserve quality premiums, but specialty-material names remain sensitive to utilization and customer inventories.'},
+  'capital-intensive-foundry': {label:'Capital-intensive foundry', primary:'EV/EBITDA + FCF + utilization', anchors:['evEbitdaTTM','fcfYield','historicalPercentile'], description:'Foundries require a capital-intensity lens. Growth is valuable only if pricing, utilization and returns on incremental fabs remain attractive.'},
+  'memory-cycle': {label:'Memory cycle', primary:'Forward P/E + normalized earnings', anchors:['forwardPE','forwardEvSales','estimateRevision90d'], description:'Trailing earnings can be most attractive at the top of a memory cycle. Use forward estimates, pricing/supply discipline and estimate revisions to judge whether peak earnings are still moving higher.'},
+  'memory-foundry': {label:'Memory / foundry conglomerate', primary:'Sum-of-parts + forward earnings', anchors:['forwardPE','forwardEvSales','estimateRevision90d'], description:'A blended multiple can hide very different memory, foundry and device economics. Treat the live multiples as a starting point, not a final valuation.'},
+  'storage-cycle': {label:'Storage cycle', primary:'Forward P/E + FCF yield', anchors:['forwardPE','fcfYield','estimateRevision90d'], description:'Storage profits can swing sharply with pricing and supply discipline. Forward estimates and free cash flow matter more than trailing peak earnings.'},
+  'recurring-ip': {label:'Recurring software / IP', primary:'Forward EV/Sales + growth', anchors:['forwardEvSales','revenueGrowthFY1','historicalPercentile'], description:'Recurring revenue, backlog and high incremental margins support premium multiples. The expectations question is whether growth can remain high enough to sustain the premium.'},
+  'compute-growth': {label:'AI compute / custom silicon growth', primary:'Forward P/E + estimate revisions', anchors:['forwardPE','revenueGrowthFY1','estimateRevision90d'], description:'For high-growth compute, valuation is inseparable from estimate revisions. A high multiple can work while forward revenue/EPS estimates rise faster than the multiple compresses.'},
+  'network-growth': {label:'AI networking growth', primary:'Forward EV/Sales + growth durability', anchors:['forwardEvSales','revenueGrowthFY1','estimateRevision90d'], description:'Connectivity leaders often trade on revenue duration before mature margins. Compare forward sales multiples with customer concentration and the persistence of AI bandwidth growth.'},
+  'optical-cycle': {label:'Optical connectivity cycle', primary:'Forward P/E + EV/Sales', anchors:['forwardPE','forwardEvSales','estimateRevision90d'], description:'Optical names combine secular bandwidth growth with sharp product cycles. Estimate revisions and 800G/1.6T mix are crucial.'},
+  'quality-growth': {label:'Quality semiconductor growth', primary:'Forward P/E + FCF', anchors:['forwardPE','fcfYield','revenueGrowthFY1'], description:'Use forward earnings and cash conversion, with a premium for sustained share gains and high returns on capital.'},
+  'analog-cycle': {label:'Analog / embedded cycle', primary:'Normalized P/E + FCF yield', anchors:['forwardPE','fcfYield','historicalPercentile'], description:'Analog earnings are utilization-sensitive. Compare normalized forward earnings and free cash flow with inventory and factory-loading trends.'},
+  'auto-edge-cycle': {label:'Automotive / edge cycle', primary:'Forward P/E + content growth', anchors:['forwardPE','revenueGrowthFY1','historicalPercentile'], description:'Separate secular content-per-vehicle growth from auto production and inventory cycles.'},
+  'power-cycle': {label:'Power semiconductor cycle', primary:'EV/Sales + normalized margin', anchors:['forwardEvSales','forwardPE','historicalPercentile'], description:'Power-semiconductor valuations depend heavily on utilization, pricing and capital intensity. Near-term P/E can be misleading.'},
+  'edge-growth': {label:'Edge compute / IoT growth', primary:'Forward EV/Sales + path to earnings', anchors:['forwardEvSales','revenueGrowthFY1','forwardPE'], description:'For smaller edge names, value growth against gross margin, design-win conversion and the path from product adoption to durable free cash flow.'},
+  'turnaround-distress': {label:'Turnaround / balance-sheet risk', primary:'Enterprise value + liquidity', anchors:['forwardEvSales','netDebtToEbitda','fcfYield'], description:'Traditional P/E is not decision-useful. Focus on liquidity runway, debt, utilization, gross-margin inflection and enterprise value relative to a survivable revenue base.'}
+};
+
+const valuationUniverse = {};
+const universeByTicker = {};
+// universeConfig is loaded from a generated JS copy below; this fallback derives framework from layer if unavailable.
+companies.forEach(c => {
+  universeByTicker[c.ticker] = c;
+});
+
+const frameworkByLayer = {
+  'Lithography':'monopoly-quality','Process Control':'equipment-scarcity','Wafer Fab Equipment':'equipment-cycle','Test':'test-complexity',
+  'Advanced Packaging & Metrology':'packaging-complexity','Advanced Packaging & Inspection':'packaging-complexity','Advanced Packaging':'packaging-complexity','Packaging & Test':'packaging-volume','Wafer Processing':'packaging-complexity','Materials':'materials-cycle',
+  'Foundry':'capital-intensive-foundry','Memory':'memory-cycle','Memory & Foundry':'memory-foundry','Storage':'storage-cycle',
+  'EDA & IP':'recurring-ip','CPU IP':'recurring-ip','Memory Interface IP':'recurring-ip','AI Compute':'compute-growth','Custom Compute & Networking':'compute-growth','AI Networking Systems':'network-growth','Connectivity Silicon':'network-growth','Optical Connectivity':'optical-cycle',
+  'Power Management':'quality-growth','Analog & Embedded':'analog-cycle','Auto & Edge':'auto-edge-cycle','Power Semiconductors':'power-cycle','Edge Compute & Connectivity':'edge-growth','Edge Compute':'edge-growth','Edge & IoT':'edge-growth','Edge AI':'edge-growth','Programmable Logic':'quality-growth'
+};
+companies.forEach(c => {
+  const framework = c.ticker === 'WOLF' ? 'turnaround-distress' : (frameworkByLayer[c.layer] || 'quality-growth');
+  valuationUniverse[c.ticker] = {framework, ...valuationFrameworks[framework]};
+});

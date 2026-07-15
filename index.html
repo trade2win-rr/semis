@@ -3,184 +3,171 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Semiconductor Intelligence Map — public semiconductor companies ranked by bottleneck control, strategic position, AI exposure, cycle setup, valuation discrepancy and convexity." />
-  <title>Semiconductor Intelligence Map</title>
+  <meta name="description" content="Semiconductor Intelligence Map — 57 public semiconductor companies with sourced research, bottleneck analysis, live valuation, consensus expectations, cycle signals and dependency mapping." />
+  <title>Semiconductor Intelligence Map · Research v2</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <header class="site-header">
     <div class="wrap header-inner">
       <div>
-        <div class="eyebrow">FULL DETAIL · TRACEABLE LOGIC · PUBLIC EQUITIES</div>
+        <div class="eyebrow">FULL STACK · 57 PUBLIC EQUITIES · SOURCE-SEPARATED DATA</div>
         <h1>Semiconductor Intelligence Map</h1>
-        <p class="subtitle">Who owns the bottleneck — and what is the market mispricing?</p>
+        <p class="subtitle">Who owns the bottleneck — what is changing — and what is the market already pricing in?</p>
       </div>
       <div class="asof-card">
         <span>Research database</span>
-        <strong>v1.0 research · Jul 14, 2026</strong>
-        <small>Scores are research judgments, not investment advice.</small>
+        <strong>v2.0 · Jul. 15, 2026</strong>
+        <small id="headerLiveStatus">Loading live-data status…</small>
       </div>
     </div>
   </header>
 
   <main class="wrap">
+    <section id="dataStatus" class="data-status panel"></section>
+
     <section class="hero-grid">
       <article class="hero-copy panel">
-        <h2>How to read the map</h2>
-        <p>The semiconductor industry is a chain of dependencies. A company can have strong demand and still capture little value; another can sit one layer upstream and own the scarce tool every winner must buy.</p>
-        <p>This map separates <strong>strategic position</strong> from <strong>stock opportunity</strong>. The highest-quality company is not automatically the best investment if the market already knows the story.</p>
+        <h2>Three questions, kept separate</h2>
+        <p><strong>Strategic quality:</strong> how indispensable is the company? <strong>Earnings setup:</strong> what is changing now? <strong>Expectations:</strong> what growth, margins and cycle outcome does the current valuation appear to require?</p>
+        <p>The research layer uses primary issuer sources. The market layer uses a separately timestamped data provider. Model-derived fields are labeled so reported facts are never mixed with analytical judgments.</p>
         <div class="legend-row">
-          <span class="pill accent">Bottleneck</span>
-          <span class="pill">Strategic Position</span>
-          <span class="pill">Earnings Setup</span>
-          <span class="pill">Discrepancy</span>
-          <span class="pill">Convexity</span>
+          <span class="pill accent">Issuer reported</span>
+          <span class="pill">Market data</span>
+          <span class="pill">Consensus</span>
+          <span class="pill">Model-derived</span>
         </div>
       </article>
       <aside class="score-card panel" id="summaryCards"></aside>
     </section>
 
     <nav class="tabs" aria-label="Primary views">
-      <button class="tab active" data-tab="research">Research Dashboard</button>
+      <button class="tab active" data-tab="research">Research Library</button>
+      <button class="tab" data-tab="valuation">Valuation & Expectations</button>
       <button class="tab" data-tab="companies">Company Map</button>
       <button class="tab" data-tab="bottlenecks">Bottleneck Rankings</button>
       <button class="tab" data-tab="cycle">Cycle Dashboard</button>
       <button class="tab" data-tab="dependencies">Dependency Map</button>
       <button class="tab" data-tab="catalysts">Catalyst Calendar</button>
-      <button class="tab" data-tab="methodology">Methodology & Sources</button>
+      <button class="tab" data-tab="methodology">Methodology & Setup</button>
     </nav>
-
 
     <section id="research" class="tab-panel active">
       <div class="section-intro panel research-intro">
-        <div><div class="eyebrow">DEEP RESEARCH LAYER</div><h2>Current financial signals + bottleneck analysis</h2></div>
+        <div><div class="eyebrow">DEEP RESEARCH · ALL 57 NAMES</div><h2>Primary-source company profiles</h2></div>
         <p id="researchMetaText"></p>
       </div>
+      <div class="controls panel compact-controls">
+        <input id="researchSearch" type="search" placeholder="Search ticker, company, layer or thesis…" aria-label="Search research profiles" />
+        <select id="researchLayer" aria-label="Filter research by layer"><option value="all">All layers</option></select>
+        <select id="researchSort" aria-label="Sort research">
+          <option value="opportunity">Sort: Research opportunity</option>
+          <option value="bottleneck">Sort: Bottleneck</option>
+          <option value="ticker">Sort: Ticker</option>
+        </select>
+      </div>
       <div id="researchLeaders" class="research-grid"></div>
+    </section>
+
+    <section id="valuation" class="tab-panel">
+      <div class="section-intro panel">
+        <div><div class="eyebrow">LIVE MARKET + CONSENSUS LAYER</div><h2>Valuation and expectations</h2></div>
+        <p>Each stock is evaluated with a business-specific valuation framework. Memory is not judged like EDA; foundries are not judged like high-growth connectivity.</p>
+      </div>
+      <div class="valuation-explainer panel" id="valuationExplainer"></div>
+      <div class="controls panel compact-controls">
+        <input id="valuationSearch" type="search" placeholder="Search valuation table…" aria-label="Search valuation table" />
+        <select id="frameworkFilter" aria-label="Filter by valuation framework"><option value="all">All valuation frameworks</option></select>
+        <select id="valuationSort" aria-label="Sort valuation">
+          <option value="expectations">Sort: Expectations burden</option>
+          <option value="forwardPE">Sort: Forward P/E</option>
+          <option value="forwardEvSales">Sort: Forward EV/Sales</option>
+          <option value="revision90">Sort: 90d estimate revision</option>
+          <option value="priceChange">Sort: Daily move</option>
+        </select>
+      </div>
+      <div class="table-shell panel">
+        <div class="table-meta"><span id="valuationCount"></span><span>Click a row for the complete research + valuation view.</span></div>
+        <div class="table-scroll">
+          <table id="valuationTable">
+            <thead><tr>
+              <th class="sticky-col">Company</th><th>Framework</th><th>Price</th><th>Day</th><th>Market Cap</th><th>Fwd P/E</th><th>Fwd EV/Sales</th><th>EV/EBITDA TTM</th><th>FCF Yield</th><th>FY1 Rev Growth</th><th>90d Rev Revision</th><th>Hist. Valuation</th><th>Peer Valuation</th><th>Expectations</th>
+            </tr></thead>
+            <tbody id="valuationRows"></tbody>
+          </table>
+        </div>
+      </div>
     </section>
 
     <section id="companies" class="tab-panel">
       <div class="controls panel">
         <input id="searchInput" type="search" placeholder="Search company, ticker, layer, thesis…" aria-label="Search companies" />
         <select id="layerFilter" aria-label="Filter by industry layer"><option value="all">All layers</option></select>
-        <select id="aiFilter" aria-label="Filter by AI exposure">
-          <option value="all">All AI exposure</option>
-          <option value="9">AI exposure 9–10</option>
-          <option value="7">AI exposure 7+</option>
-          <option value="5">AI exposure 5+</option>
-        </select>
-        <select id="sortSelect" aria-label="Sort companies">
-          <option value="opportunity">Sort: Opportunity</option>
-          <option value="bottleneck">Sort: Bottleneck</option>
-          <option value="strategic">Sort: Strategic position</option>
-          <option value="earnings">Sort: Earnings setup</option>
-          <option value="discrepancy">Sort: Valuation discrepancy</option>
-          <option value="convexity">Sort: Convexity</option>
-          <option value="ticker">Sort: Ticker</option>
-        </select>
+        <select id="aiFilter" aria-label="Filter by AI exposure"><option value="all">All AI exposure</option><option value="9">AI exposure 9–10</option><option value="7">AI exposure 7+</option><option value="5">AI exposure 5+</option></select>
+        <select id="sortSelect" aria-label="Sort companies"><option value="opportunity">Sort: Opportunity</option><option value="bottleneck">Sort: Bottleneck</option><option value="strategic">Sort: Strategic position</option><option value="earnings">Sort: Earnings setup</option><option value="discrepancy">Sort: Valuation discrepancy</option><option value="convexity">Sort: Convexity</option><option value="ticker">Sort: Ticker</option></select>
       </div>
-
       <div class="table-shell panel">
-        <div class="table-meta"><span id="resultCount"></span><span>Click any row for the full thesis.</span></div>
-        <div class="table-scroll">
-          <table id="companyTable">
-            <thead>
-              <tr>
-                <th class="sticky-col">Company</th>
-                <th>Layer</th>
-                <th>What it owns</th>
-                <th>Bottleneck</th>
-                <th>Strategic</th>
-                <th>AI</th>
-                <th>Earnings</th>
-                <th>Discrepancy</th>
-                <th>Convexity</th>
-                <th>Opportunity</th>
-                <th>Awareness</th>
-                <th>Cycle</th>
-                <th>Key question</th>
-              </tr>
-            </thead>
-            <tbody id="companyRows"></tbody>
-          </table>
-        </div>
+        <div class="table-meta"><span id="resultCount"></span><span>Research scores are judgments; live valuation fields are kept separate.</span></div>
+        <div class="table-scroll"><table id="companyTable"><thead><tr><th class="sticky-col">Company</th><th>Layer</th><th>What it owns</th><th>Bottleneck</th><th>Strategic</th><th>AI</th><th>Earnings</th><th>Discrepancy</th><th>Convexity</th><th>Opportunity</th><th>Awareness</th><th>Cycle</th><th>Key question</th></tr></thead><tbody id="companyRows"></tbody></table></div>
       </div>
     </section>
 
     <section id="bottlenecks" class="tab-panel">
-      <div class="section-intro panel">
-        <div>
-          <div class="eyebrow">SCARCITY FIRST</div>
-          <h2>Where the stack is hardest to route around</h2>
-        </div>
-        <p>A high bottleneck score means customers have few realistic substitutes, switching is difficult, and the supplier can capture economics when demand tightens.</p>
-      </div>
+      <div class="section-intro panel"><div><div class="eyebrow">SCARCITY FIRST</div><h2>Where the stack is hardest to route around</h2></div><p>A high bottleneck score means customers have few realistic substitutes, switching is difficult, and the supplier can capture economics when demand tightens.</p></div>
       <div id="bottleneckGrid" class="rank-grid"></div>
     </section>
 
-
     <section id="cycle" class="tab-panel">
-      <div class="section-intro panel">
-        <div><div class="eyebrow">CURRENT INDUSTRY PULSE</div><h2>Cycle dashboard</h2></div>
-        <p>These indicators answer a different question from moat analysis: is the earnings environment accelerating, normalizing or rolling over?</p>
-      </div>
+      <div class="section-intro panel"><div><div class="eyebrow">CURRENT INDUSTRY PULSE</div><h2>Cycle dashboard</h2></div><p>Moat and cycle are different. These indicators ask whether the earnings environment is accelerating, normalizing or rolling over.</p></div>
       <div id="cycleGrid" class="cycle-grid"></div>
     </section>
 
     <section id="dependencies" class="tab-panel">
-      <div class="section-intro panel">
-        <div>
-          <div class="eyebrow">EVENT TRANSMISSION</div>
-          <h2>Semiconductor dependency map</h2>
-        </div>
-        <p>Click a node to see which suppliers enable it and which public companies may receive a read-through when conditions change.</p>
-      </div>
-      <div class="dependency-layout">
-        <div class="dependency-map panel" id="dependencyMap"></div>
-        <aside class="dependency-detail panel" id="dependencyDetail">
-          <div class="empty-state">Select a node in the map.</div>
-        </aside>
-      </div>
+      <div class="section-intro panel"><div><div class="eyebrow">EVENT TRANSMISSION</div><h2>Semiconductor dependency map</h2></div><p>Click a node to see which suppliers enable it and which public companies may receive a read-through when conditions change.</p></div>
+      <div class="dependency-layout"><div class="dependency-map panel" id="dependencyMap"></div><aside class="dependency-detail panel" id="dependencyDetail"><div class="empty-state">Select a node in the map.</div></aside></div>
     </section>
 
-
     <section id="catalysts" class="tab-panel">
-      <div class="section-intro panel">
-        <div><div class="eyebrow">EVENT TRANSMISSION</div><h2>Upcoming catalyst calendar</h2></div>
-        <p>Each event is included because its read-through can extend beyond the reporting company into suppliers, customers or competing architectures.</p>
-      </div>
+      <div class="section-intro panel"><div><div class="eyebrow">EVENT TRANSMISSION</div><h2>Catalyst calendar</h2></div><p>Static issuer-sourced research dates are supplemented by the live data updater when the provider returns an earnings calendar.</p></div>
       <div id="catalystList" class="catalyst-list"></div>
     </section>
 
     <section id="methodology" class="tab-panel">
       <div class="method-grid">
-        <article class="panel method-card"><span>01</span><h3>Strategic Position</h3><p>How hard is the company to replace? Bottleneck control, technology lead, switching costs, pricing power and downstream dependence.</p></article>
-        <article class="panel method-card"><span>02</span><h3>Earnings Setup</h3><p>What is happening to the business now? Demand acceleration, estimate direction, pricing, utilization, inventories and operating leverage.</p></article>
-        <article class="panel method-card"><span>03</span><h3>Valuation Discrepancy</h3><p>How large is the gap between business quality or earnings inflection and what appears to be embedded in market expectations?</p></article>
-        <article class="panel method-card"><span>04</span><h3>Convexity</h3><p>How asymmetric is the payoff? Upside from earnings, multiple, cycle recovery and optionality versus balance-sheet and structural downside.</p></article>
+        <article class="panel method-card"><span>01</span><h3>Reported facts</h3><p>Revenue, margins and operating commentary come from issuer investor-relations materials and carry a point-in-time period label.</p></article>
+        <article class="panel method-card"><span>02</span><h3>Market & consensus</h3><p>Price, market cap, valuation ratios and analyst estimates come from the configured external data provider and carry independent timestamps.</p></article>
+        <article class="panel method-card"><span>03</span><h3>Model-derived</h3><p>Forward multiples, revision momentum, historical percentiles and expectations burden are calculated from the underlying data and labeled as derived.</p></article>
+        <article class="panel method-card"><span>04</span><h3>Research judgment</h3><p>Bottleneck, strategic position, discrepancy and convexity remain analytical scores rather than market facts or consensus recommendations.</p></article>
       </div>
       <article class="panel methodology-copy">
-        <h2>Scoring logic</h2>
-        <p><strong>Opportunity score</strong> is a weighted research heuristic: 30% strategic position, 25% earnings setup, 25% valuation discrepancy and 20% convexity. It is not a price target and should not be treated as a mechanical buy signal.</p>
-        <p><strong>Bottleneck score</strong> is shown separately because a monopoly-like asset can still be a poor stock at the wrong valuation, while a cyclical company with a lower moat can offer a better setup at the right point in the cycle.</p>
-        <p><strong>Current version:</strong> 57 companies are mapped across the stack, with 16 core names receiving a deeper research layer using the latest official company-reported financials available before the July 14, 2026 close. Each deep-dive links to its primary source. Market prices are point-in-time snapshots and are not auto-updating.</p>
-        <p><strong>Valuation labels:</strong> qualitative judgments that combine market expectations, business quality, cycle position and execution risk. They are intentionally separate from the strategic score so a great business can still rank poorly as a stock setup.</p>
-        <p><strong>Source policy:</strong> company financial snapshots use issuer investor-relations materials; industry-cycle indicators use SIA, WSTS/SEMI or issuer data. Research judgments remain the author's synthesis.</p>
+        <h2>How the valuation layer works</h2>
+        <p><strong>No universal semiconductor multiple:</strong> each company is assigned a framework based on its economics. EDA/IP is evaluated with recurring-growth metrics; memory and storage with forward/normalized cycle metrics; foundries with capital intensity and cash returns; distressed names with enterprise value and liquidity.</p>
+        <p><strong>Expectations burden:</strong> a 1–10 model-derived indicator. Higher means the live valuation appears to require more growth, better margins or a more favorable cycle outcome. It uses the relevant forward multiple, growth, historical valuation position and estimate revisions when available. It is not a price target.</p>
+        <p><strong>Revision momentum:</strong> the updater stores one daily consensus snapshot. The 30- and 90-day revision fields remain blank until enough history has accumulated. This is intentional; the site never backfills invented revisions.</p>
+        <p><strong>Live-data architecture:</strong> GitHub Pages stays static and public. A scheduled GitHub Action reads a private API key from GitHub Secrets, updates JSON files, validates them, and commits only the generated data. No API key is shipped to the browser.</p>
+        <p><strong>Fallback behavior:</strong> if the market-data provider fails or is not configured, all 57 issuer-sourced research profiles remain available and the site clearly labels the live layer as unavailable or stale.</p>
+      </article>
+      <article class="panel methodology-copy setup-card">
+        <h2>Enable automatic updates</h2>
+        <ol>
+          <li>Create an account with the supported market-data provider and obtain an API key with access to the endpoints you need.</li>
+          <li>In GitHub: <strong>Settings → Secrets and variables → Actions → New repository secret</strong>.</li>
+          <li>Name the secret <code>FMP_API_KEY</code> and paste the key. Never place the key in <code>app.js</code> or any public file.</li>
+          <li>Open <strong>Actions → Update semiconductor market data → Run workflow</strong> and select a deep refresh for the first run.</li>
+          <li>The workflow then runs hourly for quotes and refreshes the heavier fundamentals/consensus layer approximately daily.</li>
+        </ol>
       </article>
     </section>
   </main>
 
-  <footer class="wrap site-footer">
-    <p>Built as a research framework for semiconductor public equities. Data and scores require ongoing verification. Not investment advice.</p>
-  </footer>
+  <footer class="wrap site-footer"><p>Research tool for public semiconductor equities. Verify source data before trading. Not investment advice.</p></footer>
 
-  <dialog id="companyDialog">
-    <button class="dialog-close" id="dialogClose" aria-label="Close">×</button>
-    <div id="dialogContent"></div>
-  </dialog>
+  <dialog id="companyDialog"><button class="dialog-close" id="dialogClose" aria-label="Close">×</button><div id="dialogContent"></div></dialog>
 
   <script src="data.js"></script>
   <script src="research.js"></script>
+  <script src="research-v2.js"></script>
+  <script src="valuation-config.js"></script>
   <script src="app.js"></script>
 </body>
 </html>
