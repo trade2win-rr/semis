@@ -1,12 +1,1215 @@
 {
-  "meta": {
-    "provider": "Not configured",
-    "quotesUpdatedAt": null,
-    "fundamentalsUpdatedAt": null,
-    "estimatesUpdatedAt": null,
-    "historicalUpdatedAt": null,
-    "status": "static-fallback",
-    "note": "Add the FMP_API_KEY GitHub repository secret and run the Update semiconductor market data workflow to populate this file."
+  "companies": {
+    "000660.KS": {
+      "currency": "KRW",
+      "derived": {
+        "epsEstimateRevision30d": null,
+        "epsEstimateRevision90d": null,
+        "epsGrowthFY1": null,
+        "forwardEvSales": null,
+        "forwardMarketCapSales": null,
+        "forwardPE": null,
+        "historicalEvSalesPercentile": null,
+        "historicalPePercentile": null,
+        "revenueEstimateRevision30d": null,
+        "revenueEstimateRevision90d": null,
+        "revenueGrowthFY1": null
+      },
+      "framework": "memory-cycle",
+      "metrics": {},
+      "peerGroup": "Memory",
+      "providerSymbol": "000660.KS"
+    },
+    "005930.KS": {
+      "currency": "KRW",
+      "derived": {
+        "epsEstimateRevision30d": null,
+        "epsEstimateRevision90d": null,
+        "epsGrowthFY1": null,
+        "forwardEvSales": null,
+        "forwardMarketCapSales": null,
+        "forwardPE": null,
+        "historicalEvSalesPercentile": null,
+        "historicalPePercentile": null,
+        "revenueEstimateRevision30d": null,
+        "revenueEstimateRevision90d": null,
+        "revenueGrowthFY1": null
+      },
+      "framework": "memory-foundry",
+      "metrics": {},
+      "peerGroup": "Memory / foundry conglomerate",
+      "providerSymbol": "005930.KS"
+    },
+    "2454.TW": {
+      "currency": "TWD",
+      "derived": {
+        "epsEstimateRevision30d": null,
+        "epsEstimateRevision90d": null,
+        "epsGrowthFY1": null,
+        "forwardEvSales": null,
+        "forwardMarketCapSales": null,
+        "forwardPE": null,
+        "historicalEvSalesPercentile": null,
+        "historicalPePercentile": null,
+        "revenueEstimateRevision30d": null,
+        "revenueEstimateRevision90d": null,
+        "revenueGrowthFY1": null
+      },
+      "framework": "edge-growth",
+      "metrics": {},
+      "peerGroup": "Edge compute / IoT",
+      "providerSymbol": "2454.TW"
+    },
+    "6146.T": {
+      "currency": "JPY",
+      "derived": {
+        "epsEstimateRevision30d": null,
+        "epsEstimateRevision90d": null,
+        "epsGrowthFY1": null,
+        "forwardEvSales": null,
+        "forwardMarketCapSales": null,
+        "forwardPE": null,
+        "historicalEvSalesPercentile": null,
+        "historicalPePercentile": null,
+        "revenueEstimateRevision30d": null,
+        "revenueEstimateRevision90d": null,
+        "revenueGrowthFY1": null
+      },
+      "framework": "packaging-complexity",
+      "metrics": {},
+      "peerGroup": "Advanced packaging equipment",
+      "providerSymbol": "6146.T"
+    },
+    "6857.T": {
+      "currency": "JPY",
+      "derived": {
+        "epsEstimateRevision30d": null,
+        "epsEstimateRevision90d": null,
+        "epsGrowthFY1": null,
+        "forwardEvSales": null,
+        "forwardMarketCapSales": null,
+        "forwardPE": null,
+        "historicalEvSalesPercentile": null,
+        "historicalPePercentile": null,
+        "revenueEstimateRevision30d": null,
+        "revenueEstimateRevision90d": null,
+        "revenueGrowthFY1": null
+      },
+      "framework": "test-complexity",
+      "metrics": {},
+      "peerGroup": "Semiconductor test",
+      "providerSymbol": "6857.T"
+    },
+    "8035.T": {
+      "currency": "JPY",
+      "derived": {
+        "epsEstimateRevision30d": null,
+        "epsEstimateRevision90d": null,
+        "epsGrowthFY1": null,
+        "forwardEvSales": null,
+        "forwardMarketCapSales": null,
+        "forwardPE": null,
+        "historicalEvSalesPercentile": null,
+        "historicalPePercentile": null,
+        "revenueEstimateRevision30d": null,
+        "revenueEstimateRevision90d": null,
+        "revenueGrowthFY1": null
+      },
+      "framework": "equipment-cycle",
+      "metrics": {},
+      "peerGroup": "Semiconductor equipment \u2014 cyclical",
+      "providerSymbol": "8035.T"
+    },
+    "ACLS": {
+      "currency": "USD",
+      "derived": {
+        "epsEstimateRevision30d": null,
+        "epsEstimateRevision90d": null,
+        "epsGrowthFY1": null,
+        "forwardEvSales": null,
+        "forwardMarketCapSales": null,
+        "forwardPE": null,
+        "historicalEvSalesPercentile": null,
+        "historicalPePercentile": null,
+        "revenueEstimateRevision30d": null,
+        "revenueEstimateRevision90d": null,
+        "revenueGrowthFY1": null
+      },
+      "framework": "equipment-cycle",
+      "metrics": {},
+      "peerGroup": "Semiconductor equipment \u2014 cyclical",
+      "providerSymbol": "ACLS"
+    },
+    "ADI": {
+      "currency": "USD",
+      "derived": {
+        "epsEstimateRevision30d": null,
+        "epsEstimateRevision90d": null,
+        "epsGrowthFY1": null,
+        "forwardEvSales": null,
+        "forwardMarketCapSales": null,
+        "forwardPE": null,
+        "historicalEvSalesPercentile": null,
+        "historicalPePercentile": null,
+        "revenueEstimateRevision30d": null,
+        "revenueEstimateRevision90d": null,
+        "revenueGrowthFY1": null
+      },
+      "framework": "analog-cycle",
+      "metrics": {},
+      "peerGroup": "Analog / embedded",
+      "providerSymbol": "ADI"
+    },
+    "ALAB": {
+      "currency": "USD",
+      "derived": {
+        "epsEstimateRevision30d": null,
+        "epsEstimateRevision90d": null,
+        "epsGrowthFY1": null,
+        "forwardEvSales": null,
+        "forwardMarketCapSales": null,
+        "forwardPE": null,
+        "historicalEvSalesPercentile": null,
+        "historicalPePercentile": null,
+        "revenueEstimateRevision30d": null,
+        "revenueEstimateRevision90d": null,
+        "revenueGrowthFY1": null
+      },
+      "framework": "network-growth",
+      "metrics": {},
+      "peerGroup": "AI networking / connectivity",
+      "providerSymbol": "ALAB"
+    },
+    "AMAT": {
+      "currency": "USD",
+      "derived": {
+        "epsEstimateRevision30d": null,
+        "epsEstimateRevision90d": null,
+        "epsGrowthFY1": null,
+        "forwardEvSales": null,
+        "forwardMarketCapSales": null,
+        "forwardPE": null,
+        "historicalEvSalesPercentile": null,
+        "historicalPePercentile": null,
+        "revenueEstimateRevision30d": null,
+        "revenueEstimateRevision90d": null,
+        "revenueGrowthFY1": null
+      },
+      "framework": "equipment-cycle",
+      "metrics": {},
+      "peerGroup": "Semiconductor equipment \u2014 cyclical",
+      "providerSymbol": "AMAT"
+    },
+    "AMBA": {
+      "currency": "USD",
+      "derived": {
+        "epsEstimateRevision30d": null,
+        "epsEstimateRevision90d": null,
+        "epsGrowthFY1": null,
+        "forwardEvSales": null,
+        "forwardMarketCapSales": null,
+        "forwardPE": null,
+        "historicalEvSalesPercentile": null,
+        "historicalPePercentile": null,
+        "revenueEstimateRevision30d": null,
+        "revenueEstimateRevision90d": null,
+        "revenueGrowthFY1": null
+      },
+      "framework": "edge-growth",
+      "metrics": {},
+      "peerGroup": "Edge compute / IoT",
+      "providerSymbol": "AMBA"
+    },
+    "AMD": {
+      "currency": "USD",
+      "derived": {
+        "epsEstimateRevision30d": null,
+        "epsEstimateRevision90d": null,
+        "epsGrowthFY1": null,
+        "forwardEvSales": null,
+        "forwardMarketCapSales": null,
+        "forwardPE": null,
+        "historicalEvSalesPercentile": null,
+        "historicalPePercentile": null,
+        "revenueEstimateRevision30d": null,
+        "revenueEstimateRevision90d": null,
+        "revenueGrowthFY1": null
+      },
+      "framework": "compute-growth",
+      "metrics": {
+        "enterpriseValue": 774696190000.0,
+        "evToEbitdaTTM": 95.80709745238684,
+        "evToSalesTTM": 20.683937363165484,
+        "fcfYield": 0.011043131723966683,
+        "netDebtToEbitda": -0.21197130843433093,
+        "peTTM": 154.59415584415584,
+        "priceToSalesTTM": 20.729700165536393,
+        "roic": 0.06218265629181962
+      },
+      "peerGroup": "AI compute / custom silicon",
+      "providerSymbol": "AMD"
+    },
+    "AMKR": {
+      "currency": "USD",
+      "derived": {
+        "epsEstimateRevision30d": null,
+        "epsEstimateRevision90d": null,
+        "epsGrowthFY1": null,
+        "forwardEvSales": null,
+        "forwardMarketCapSales": null,
+        "forwardPE": null,
+        "historicalEvSalesPercentile": null,
+        "historicalPePercentile": null,
+        "revenueEstimateRevision30d": null,
+        "revenueEstimateRevision90d": null,
+        "revenueGrowthFY1": null
+      },
+      "framework": "packaging-volume",
+      "metrics": {},
+      "peerGroup": "OSAT",
+      "providerSymbol": "AMKR"
+    },
+    "ANET": {
+      "currency": "USD",
+      "derived": {
+        "epsEstimateRevision30d": null,
+        "epsEstimateRevision90d": null,
+        "epsGrowthFY1": null,
+        "forwardEvSales": null,
+        "forwardMarketCapSales": null,
+        "forwardPE": null,
+        "historicalEvSalesPercentile": null,
+        "historicalPePercentile": null,
+        "revenueEstimateRevision30d": null,
+        "revenueEstimateRevision90d": null,
+        "revenueGrowthFY1": null
+      },
+      "framework": "network-growth",
+      "metrics": {},
+      "peerGroup": "AI networking / connectivity",
+      "providerSymbol": "ANET"
+    },
+    "ARM": {
+      "currency": "USD",
+      "derived": {
+        "epsEstimateRevision30d": null,
+        "epsEstimateRevision90d": null,
+        "epsGrowthFY1": null,
+        "forwardEvSales": null,
+        "forwardMarketCapSales": null,
+        "forwardPE": null,
+        "historicalEvSalesPercentile": null,
+        "historicalPePercentile": null,
+        "revenueEstimateRevision30d": null,
+        "revenueEstimateRevision90d": null,
+        "revenueGrowthFY1": null
+      },
+      "framework": "recurring-ip",
+      "metrics": {},
+      "peerGroup": "EDA / IP",
+      "providerSymbol": "ARM"
+    },
+    "ASM.AS": {
+      "currency": "EUR",
+      "derived": {
+        "epsEstimateRevision30d": null,
+        "epsEstimateRevision90d": null,
+        "epsGrowthFY1": null,
+        "forwardEvSales": null,
+        "forwardMarketCapSales": null,
+        "forwardPE": null,
+        "historicalEvSalesPercentile": null,
+        "historicalPePercentile": null,
+        "revenueEstimateRevision30d": null,
+        "revenueEstimateRevision90d": null,
+        "revenueGrowthFY1": null
+      },
+      "framework": "equipment-cycle",
+      "metrics": {},
+      "peerGroup": "Semiconductor equipment \u2014 cyclical",
+      "providerSymbol": "ASM.AS"
+    },
+    "ASML": {
+      "currency": "USD",
+      "derived": {
+        "epsEstimateRevision30d": null,
+        "epsEstimateRevision90d": null,
+        "epsGrowthFY1": null,
+        "forwardEvSales": null,
+        "forwardMarketCapSales": null,
+        "forwardPE": null,
+        "historicalEvSalesPercentile": null,
+        "historicalPePercentile": null,
+        "revenueEstimateRevision30d": null,
+        "revenueEstimateRevision90d": null,
+        "revenueGrowthFY1": null
+      },
+      "framework": "monopoly-quality",
+      "metrics": {},
+      "peerGroup": "Semiconductor equipment \u2014 scarcity",
+      "providerSymbol": "ASML"
+    },
+    "ASX": {
+      "currency": "USD",
+      "derived": {
+        "epsEstimateRevision30d": null,
+        "epsEstimateRevision90d": null,
+        "epsGrowthFY1": null,
+        "forwardEvSales": null,
+        "forwardMarketCapSales": null,
+        "forwardPE": null,
+        "historicalEvSalesPercentile": null,
+        "historicalPePercentile": null,
+        "revenueEstimateRevision30d": null,
+        "revenueEstimateRevision90d": null,
+        "revenueGrowthFY1": null
+      },
+      "framework": "packaging-volume",
+      "metrics": {},
+      "peerGroup": "OSAT",
+      "providerSymbol": "ASX"
+    },
+    "AVGO": {
+      "currency": "USD",
+      "derived": {
+        "epsEstimateRevision30d": null,
+        "epsEstimateRevision90d": null,
+        "epsGrowthFY1": null,
+        "forwardEvSales": null,
+        "forwardMarketCapSales": null,
+        "forwardPE": null,
+        "historicalEvSalesPercentile": null,
+        "historicalPePercentile": null,
+        "revenueEstimateRevision30d": null,
+        "revenueEstimateRevision90d": null,
+        "revenueGrowthFY1": null
+      },
+      "framework": "compute-growth",
+      "metrics": {},
+      "peerGroup": "AI compute / custom silicon",
+      "providerSymbol": "AVGO"
+    },
+    "BESI.AS": {
+      "currency": "EUR",
+      "derived": {
+        "epsEstimateRevision30d": null,
+        "epsEstimateRevision90d": null,
+        "epsGrowthFY1": null,
+        "forwardEvSales": null,
+        "forwardMarketCapSales": null,
+        "forwardPE": null,
+        "historicalEvSalesPercentile": null,
+        "historicalPePercentile": null,
+        "revenueEstimateRevision30d": null,
+        "revenueEstimateRevision90d": null,
+        "revenueGrowthFY1": null
+      },
+      "framework": "packaging-complexity",
+      "metrics": {},
+      "peerGroup": "Advanced packaging equipment",
+      "providerSymbol": "BESI.AS"
+    },
+    "CAMT": {
+      "currency": "USD",
+      "derived": {
+        "epsEstimateRevision30d": null,
+        "epsEstimateRevision90d": null,
+        "epsGrowthFY1": null,
+        "forwardEvSales": null,
+        "forwardMarketCapSales": null,
+        "forwardPE": null,
+        "historicalEvSalesPercentile": null,
+        "historicalPePercentile": null,
+        "revenueEstimateRevision30d": null,
+        "revenueEstimateRevision90d": null,
+        "revenueGrowthFY1": null
+      },
+      "framework": "packaging-complexity",
+      "metrics": {},
+      "peerGroup": "Advanced packaging equipment",
+      "providerSymbol": "CAMT"
+    },
+    "CDNS": {
+      "currency": "USD",
+      "derived": {
+        "epsEstimateRevision30d": null,
+        "epsEstimateRevision90d": null,
+        "epsGrowthFY1": null,
+        "forwardEvSales": null,
+        "forwardMarketCapSales": null,
+        "forwardPE": null,
+        "historicalEvSalesPercentile": null,
+        "historicalPePercentile": null,
+        "revenueEstimateRevision30d": null,
+        "revenueEstimateRevision90d": null,
+        "revenueGrowthFY1": null
+      },
+      "framework": "recurring-ip",
+      "metrics": {},
+      "peerGroup": "EDA / IP",
+      "providerSymbol": "CDNS"
+    },
+    "COHR": {
+      "currency": "USD",
+      "derived": {
+        "epsEstimateRevision30d": null,
+        "epsEstimateRevision90d": null,
+        "epsGrowthFY1": null,
+        "forwardEvSales": null,
+        "forwardMarketCapSales": null,
+        "forwardPE": null,
+        "historicalEvSalesPercentile": null,
+        "historicalPePercentile": null,
+        "revenueEstimateRevision30d": null,
+        "revenueEstimateRevision90d": null,
+        "revenueGrowthFY1": null
+      },
+      "framework": "optical-cycle",
+      "metrics": {},
+      "peerGroup": "Optical connectivity",
+      "providerSymbol": "COHR"
+    },
+    "CRDO": {
+      "currency": "USD",
+      "derived": {
+        "epsEstimateRevision30d": null,
+        "epsEstimateRevision90d": null,
+        "epsGrowthFY1": null,
+        "forwardEvSales": null,
+        "forwardMarketCapSales": null,
+        "forwardPE": null,
+        "historicalEvSalesPercentile": null,
+        "historicalPePercentile": null,
+        "revenueEstimateRevision30d": null,
+        "revenueEstimateRevision90d": null,
+        "revenueGrowthFY1": null
+      },
+      "framework": "network-growth",
+      "metrics": {},
+      "peerGroup": "AI networking / connectivity",
+      "providerSymbol": "CRDO"
+    },
+    "ENTG": {
+      "currency": "USD",
+      "derived": {
+        "epsEstimateRevision30d": null,
+        "epsEstimateRevision90d": null,
+        "epsGrowthFY1": null,
+        "forwardEvSales": null,
+        "forwardMarketCapSales": null,
+        "forwardPE": null,
+        "historicalEvSalesPercentile": null,
+        "historicalPePercentile": null,
+        "revenueEstimateRevision30d": null,
+        "revenueEstimateRevision90d": null,
+        "revenueGrowthFY1": null
+      },
+      "framework": "materials-cycle",
+      "metrics": {},
+      "peerGroup": "Semiconductor materials",
+      "providerSymbol": "ENTG"
+    },
+    "FORM": {
+      "currency": "USD",
+      "derived": {
+        "epsEstimateRevision30d": null,
+        "epsEstimateRevision90d": null,
+        "epsGrowthFY1": null,
+        "forwardEvSales": null,
+        "forwardMarketCapSales": null,
+        "forwardPE": null,
+        "historicalEvSalesPercentile": null,
+        "historicalPePercentile": null,
+        "revenueEstimateRevision30d": null,
+        "revenueEstimateRevision90d": null,
+        "revenueGrowthFY1": null
+      },
+      "framework": "test-complexity",
+      "metrics": {},
+      "peerGroup": "Semiconductor test",
+      "providerSymbol": "FORM"
+    },
+    "GFS": {
+      "currency": "USD",
+      "derived": {
+        "epsEstimateRevision30d": null,
+        "epsEstimateRevision90d": null,
+        "epsGrowthFY1": null,
+        "forwardEvSales": null,
+        "forwardMarketCapSales": null,
+        "forwardPE": null,
+        "historicalEvSalesPercentile": null,
+        "historicalPePercentile": null,
+        "revenueEstimateRevision30d": null,
+        "revenueEstimateRevision90d": null,
+        "revenueGrowthFY1": null
+      },
+      "framework": "capital-intensive-foundry",
+      "metrics": {},
+      "peerGroup": "Foundries",
+      "providerSymbol": "GFS"
+    },
+    "IFX.DE": {
+      "currency": "EUR",
+      "derived": {
+        "epsEstimateRevision30d": null,
+        "epsEstimateRevision90d": null,
+        "epsGrowthFY1": null,
+        "forwardEvSales": null,
+        "forwardMarketCapSales": null,
+        "forwardPE": null,
+        "historicalEvSalesPercentile": null,
+        "historicalPePercentile": null,
+        "revenueEstimateRevision30d": null,
+        "revenueEstimateRevision90d": null,
+        "revenueGrowthFY1": null
+      },
+      "framework": "power-cycle",
+      "metrics": {},
+      "peerGroup": "Power semiconductors",
+      "providerSymbol": "IFX.DE"
+    },
+    "KLAC": {
+      "currency": "USD",
+      "derived": {
+        "epsEstimateRevision30d": null,
+        "epsEstimateRevision90d": null,
+        "epsGrowthFY1": null,
+        "forwardEvSales": null,
+        "forwardMarketCapSales": null,
+        "forwardPE": null,
+        "historicalEvSalesPercentile": null,
+        "historicalPePercentile": null,
+        "revenueEstimateRevision30d": null,
+        "revenueEstimateRevision90d": null,
+        "revenueGrowthFY1": null
+      },
+      "framework": "equipment-scarcity",
+      "metrics": {},
+      "peerGroup": "Semiconductor equipment \u2014 scarcity",
+      "providerSymbol": "KLAC"
+    },
+    "LITE": {
+      "currency": "USD",
+      "derived": {
+        "epsEstimateRevision30d": null,
+        "epsEstimateRevision90d": null,
+        "epsGrowthFY1": null,
+        "forwardEvSales": null,
+        "forwardMarketCapSales": null,
+        "forwardPE": null,
+        "historicalEvSalesPercentile": null,
+        "historicalPePercentile": null,
+        "revenueEstimateRevision30d": null,
+        "revenueEstimateRevision90d": null,
+        "revenueGrowthFY1": null
+      },
+      "framework": "optical-cycle",
+      "metrics": {},
+      "peerGroup": "Optical connectivity",
+      "providerSymbol": "LITE"
+    },
+    "LRCX": {
+      "currency": "USD",
+      "derived": {
+        "epsEstimateRevision30d": null,
+        "epsEstimateRevision90d": null,
+        "epsGrowthFY1": null,
+        "forwardEvSales": null,
+        "forwardMarketCapSales": null,
+        "forwardPE": null,
+        "historicalEvSalesPercentile": null,
+        "historicalPePercentile": null,
+        "revenueEstimateRevision30d": null,
+        "revenueEstimateRevision90d": null,
+        "revenueGrowthFY1": null
+      },
+      "framework": "equipment-cycle",
+      "metrics": {},
+      "peerGroup": "Semiconductor equipment \u2014 cyclical",
+      "providerSymbol": "LRCX"
+    },
+    "LSCC": {
+      "currency": "USD",
+      "derived": {
+        "epsEstimateRevision30d": null,
+        "epsEstimateRevision90d": null,
+        "epsGrowthFY1": null,
+        "forwardEvSales": null,
+        "forwardMarketCapSales": null,
+        "forwardPE": null,
+        "historicalEvSalesPercentile": null,
+        "historicalPePercentile": null,
+        "revenueEstimateRevision30d": null,
+        "revenueEstimateRevision90d": null,
+        "revenueGrowthFY1": null
+      },
+      "framework": "quality-growth",
+      "metrics": {},
+      "peerGroup": "High-quality analog / mixed signal",
+      "providerSymbol": "LSCC"
+    },
+    "MCHP": {
+      "currency": "USD",
+      "derived": {
+        "epsEstimateRevision30d": null,
+        "epsEstimateRevision90d": null,
+        "epsGrowthFY1": null,
+        "forwardEvSales": null,
+        "forwardMarketCapSales": null,
+        "forwardPE": null,
+        "historicalEvSalesPercentile": null,
+        "historicalPePercentile": null,
+        "revenueEstimateRevision30d": null,
+        "revenueEstimateRevision90d": null,
+        "revenueGrowthFY1": null
+      },
+      "framework": "analog-cycle",
+      "metrics": {},
+      "peerGroup": "Analog / embedded",
+      "providerSymbol": "MCHP"
+    },
+    "MPWR": {
+      "currency": "USD",
+      "derived": {
+        "epsEstimateRevision30d": null,
+        "epsEstimateRevision90d": null,
+        "epsGrowthFY1": null,
+        "forwardEvSales": null,
+        "forwardMarketCapSales": null,
+        "forwardPE": null,
+        "historicalEvSalesPercentile": null,
+        "historicalPePercentile": null,
+        "revenueEstimateRevision30d": null,
+        "revenueEstimateRevision90d": null,
+        "revenueGrowthFY1": null
+      },
+      "framework": "quality-growth",
+      "metrics": {},
+      "peerGroup": "High-quality analog / mixed signal",
+      "providerSymbol": "MPWR"
+    },
+    "MRVL": {
+      "currency": "USD",
+      "derived": {
+        "epsEstimateRevision30d": null,
+        "epsEstimateRevision90d": null,
+        "epsGrowthFY1": null,
+        "forwardEvSales": null,
+        "forwardMarketCapSales": null,
+        "forwardPE": null,
+        "historicalEvSalesPercentile": null,
+        "historicalPePercentile": null,
+        "revenueEstimateRevision30d": null,
+        "revenueEstimateRevision90d": null,
+        "revenueGrowthFY1": null
+      },
+      "framework": "compute-growth",
+      "metrics": {},
+      "peerGroup": "AI compute / custom silicon",
+      "providerSymbol": "MRVL"
+    },
+    "MTSI": {
+      "currency": "USD",
+      "derived": {
+        "epsEstimateRevision30d": null,
+        "epsEstimateRevision90d": null,
+        "epsGrowthFY1": null,
+        "forwardEvSales": null,
+        "forwardMarketCapSales": null,
+        "forwardPE": null,
+        "historicalEvSalesPercentile": null,
+        "historicalPePercentile": null,
+        "revenueEstimateRevision30d": null,
+        "revenueEstimateRevision90d": null,
+        "revenueGrowthFY1": null
+      },
+      "framework": "network-growth",
+      "metrics": {},
+      "peerGroup": "AI networking / connectivity",
+      "providerSymbol": "MTSI"
+    },
+    "MU": {
+      "currency": "USD",
+      "derived": {
+        "epsEstimateRevision30d": null,
+        "epsEstimateRevision90d": null,
+        "epsGrowthFY1": null,
+        "forwardEvSales": null,
+        "forwardMarketCapSales": null,
+        "forwardPE": null,
+        "historicalEvSalesPercentile": null,
+        "historicalPePercentile": null,
+        "revenueEstimateRevision30d": null,
+        "revenueEstimateRevision90d": null,
+        "revenueGrowthFY1": null
+      },
+      "framework": "memory-cycle",
+      "metrics": {},
+      "peerGroup": "Memory",
+      "providerSymbol": "MU"
+    },
+    "NVDA": {
+      "currency": "USD",
+      "derived": {
+        "epsEstimateRevision30d": null,
+        "epsEstimateRevision90d": null,
+        "epsGrowthFY1": null,
+        "forwardEvSales": null,
+        "forwardMarketCapSales": null,
+        "forwardPE": null,
+        "historicalEvSalesPercentile": null,
+        "historicalPePercentile": null,
+        "revenueEstimateRevision30d": null,
+        "revenueEstimateRevision90d": null,
+        "revenueGrowthFY1": null
+      },
+      "framework": "compute-growth",
+      "metrics": {
+        "enterpriseValue": 4861942750000.0,
+        "evToEbitdaTTM": 25.195329584909572,
+        "evToSalesTTM": 19.179942285919424,
+        "fcfYield": 0.02448931366382712,
+        "netDebtToEbitda": -0.002192050577810022,
+        "peTTM": 30.602134146341463,
+        "priceToSalesTTM": 19.181610984216405,
+        "roic": 0.6299357881627576
+      },
+      "peerGroup": "AI compute / custom silicon",
+      "providerSymbol": "NVDA"
+    },
+    "NVMI": {
+      "currency": "USD",
+      "derived": {
+        "epsEstimateRevision30d": null,
+        "epsEstimateRevision90d": null,
+        "epsGrowthFY1": null,
+        "forwardEvSales": null,
+        "forwardMarketCapSales": null,
+        "forwardPE": null,
+        "historicalEvSalesPercentile": null,
+        "historicalPePercentile": null,
+        "revenueEstimateRevision30d": null,
+        "revenueEstimateRevision90d": null,
+        "revenueGrowthFY1": null
+      },
+      "framework": "equipment-scarcity",
+      "metrics": {},
+      "peerGroup": "Semiconductor equipment \u2014 scarcity",
+      "providerSymbol": "NVMI"
+    },
+    "NXPI": {
+      "currency": "USD",
+      "derived": {
+        "epsEstimateRevision30d": null,
+        "epsEstimateRevision90d": null,
+        "epsGrowthFY1": null,
+        "forwardEvSales": null,
+        "forwardMarketCapSales": null,
+        "forwardPE": null,
+        "historicalEvSalesPercentile": null,
+        "historicalPePercentile": null,
+        "revenueEstimateRevision30d": null,
+        "revenueEstimateRevision90d": null,
+        "revenueGrowthFY1": null
+      },
+      "framework": "auto-edge-cycle",
+      "metrics": {},
+      "peerGroup": "Automotive / edge",
+      "providerSymbol": "NXPI"
+    },
+    "ON": {
+      "currency": "USD",
+      "derived": {
+        "epsEstimateRevision30d": null,
+        "epsEstimateRevision90d": null,
+        "epsGrowthFY1": null,
+        "forwardEvSales": null,
+        "forwardMarketCapSales": null,
+        "forwardPE": null,
+        "historicalEvSalesPercentile": null,
+        "historicalPePercentile": null,
+        "revenueEstimateRevision30d": null,
+        "revenueEstimateRevision90d": null,
+        "revenueGrowthFY1": null
+      },
+      "framework": "power-cycle",
+      "metrics": {},
+      "peerGroup": "Power semiconductors",
+      "providerSymbol": "ON"
+    },
+    "ONTO": {
+      "currency": "USD",
+      "derived": {
+        "epsEstimateRevision30d": null,
+        "epsEstimateRevision90d": null,
+        "epsGrowthFY1": null,
+        "forwardEvSales": null,
+        "forwardMarketCapSales": null,
+        "forwardPE": null,
+        "historicalEvSalesPercentile": null,
+        "historicalPePercentile": null,
+        "revenueEstimateRevision30d": null,
+        "revenueEstimateRevision90d": null,
+        "revenueGrowthFY1": null
+      },
+      "framework": "packaging-complexity",
+      "metrics": {},
+      "peerGroup": "Advanced packaging equipment",
+      "providerSymbol": "ONTO"
+    },
+    "PI": {
+      "currency": "USD",
+      "derived": {
+        "epsEstimateRevision30d": null,
+        "epsEstimateRevision90d": null,
+        "epsGrowthFY1": null,
+        "forwardEvSales": null,
+        "forwardMarketCapSales": null,
+        "forwardPE": null,
+        "historicalEvSalesPercentile": null,
+        "historicalPePercentile": null,
+        "revenueEstimateRevision30d": null,
+        "revenueEstimateRevision90d": null,
+        "revenueGrowthFY1": null
+      },
+      "framework": "edge-growth",
+      "metrics": {},
+      "peerGroup": "Edge compute / IoT",
+      "providerSymbol": "PI"
+    },
+    "QCOM": {
+      "currency": "USD",
+      "derived": {
+        "epsEstimateRevision30d": null,
+        "epsEstimateRevision90d": null,
+        "epsGrowthFY1": null,
+        "forwardEvSales": null,
+        "forwardMarketCapSales": null,
+        "forwardPE": null,
+        "historicalEvSalesPercentile": null,
+        "historicalPePercentile": null,
+        "revenueEstimateRevision30d": null,
+        "revenueEstimateRevision90d": null,
+        "revenueGrowthFY1": null
+      },
+      "framework": "edge-growth",
+      "metrics": {},
+      "peerGroup": "Edge compute / IoT",
+      "providerSymbol": "QCOM"
+    },
+    "RMBS": {
+      "currency": "USD",
+      "derived": {
+        "epsEstimateRevision30d": null,
+        "epsEstimateRevision90d": null,
+        "epsGrowthFY1": null,
+        "forwardEvSales": null,
+        "forwardMarketCapSales": null,
+        "forwardPE": null,
+        "historicalEvSalesPercentile": null,
+        "historicalPePercentile": null,
+        "revenueEstimateRevision30d": null,
+        "revenueEstimateRevision90d": null,
+        "revenueGrowthFY1": null
+      },
+      "framework": "recurring-ip",
+      "metrics": {},
+      "peerGroup": "EDA / IP",
+      "providerSymbol": "RMBS"
+    },
+    "SIMO": {
+      "currency": "USD",
+      "derived": {
+        "epsEstimateRevision30d": null,
+        "epsEstimateRevision90d": null,
+        "epsGrowthFY1": null,
+        "forwardEvSales": null,
+        "forwardMarketCapSales": null,
+        "forwardPE": null,
+        "historicalEvSalesPercentile": null,
+        "historicalPePercentile": null,
+        "revenueEstimateRevision30d": null,
+        "revenueEstimateRevision90d": null,
+        "revenueGrowthFY1": null
+      },
+      "framework": "quality-growth",
+      "metrics": {},
+      "peerGroup": "High-quality analog / mixed signal",
+      "providerSymbol": "SIMO"
+    },
+    "SNDK": {
+      "currency": "USD",
+      "derived": {
+        "epsEstimateRevision30d": null,
+        "epsEstimateRevision90d": null,
+        "epsGrowthFY1": null,
+        "forwardEvSales": null,
+        "forwardMarketCapSales": null,
+        "forwardPE": null,
+        "historicalEvSalesPercentile": null,
+        "historicalPePercentile": null,
+        "revenueEstimateRevision30d": null,
+        "revenueEstimateRevision90d": null,
+        "revenueGrowthFY1": null
+      },
+      "framework": "storage-cycle",
+      "metrics": {},
+      "peerGroup": "Storage",
+      "providerSymbol": "SNDK"
+    },
+    "SNPS": {
+      "currency": "USD",
+      "derived": {
+        "epsEstimateRevision30d": null,
+        "epsEstimateRevision90d": null,
+        "epsGrowthFY1": null,
+        "forwardEvSales": null,
+        "forwardMarketCapSales": null,
+        "forwardPE": null,
+        "historicalEvSalesPercentile": null,
+        "historicalPePercentile": null,
+        "revenueEstimateRevision30d": null,
+        "revenueEstimateRevision90d": null,
+        "revenueGrowthFY1": null
+      },
+      "framework": "recurring-ip",
+      "metrics": {},
+      "peerGroup": "EDA / IP",
+      "providerSymbol": "SNPS"
+    },
+    "SOI.PA": {
+      "currency": "EUR",
+      "derived": {
+        "epsEstimateRevision30d": null,
+        "epsEstimateRevision90d": null,
+        "epsGrowthFY1": null,
+        "forwardEvSales": null,
+        "forwardMarketCapSales": null,
+        "forwardPE": null,
+        "historicalEvSalesPercentile": null,
+        "historicalPePercentile": null,
+        "revenueEstimateRevision30d": null,
+        "revenueEstimateRevision90d": null,
+        "revenueGrowthFY1": null
+      },
+      "framework": "materials-cycle",
+      "metrics": {},
+      "peerGroup": "Semiconductor materials",
+      "providerSymbol": "SOI.PA"
+    },
+    "STM": {
+      "currency": "USD",
+      "derived": {
+        "epsEstimateRevision30d": null,
+        "epsEstimateRevision90d": null,
+        "epsGrowthFY1": null,
+        "forwardEvSales": null,
+        "forwardMarketCapSales": null,
+        "forwardPE": null,
+        "historicalEvSalesPercentile": null,
+        "historicalPePercentile": null,
+        "revenueEstimateRevision30d": null,
+        "revenueEstimateRevision90d": null,
+        "revenueGrowthFY1": null
+      },
+      "framework": "quality-growth",
+      "metrics": {},
+      "peerGroup": "High-quality analog / mixed signal",
+      "providerSymbol": "STM"
+    },
+    "STX": {
+      "currency": "USD",
+      "derived": {
+        "epsEstimateRevision30d": null,
+        "epsEstimateRevision90d": null,
+        "epsGrowthFY1": null,
+        "forwardEvSales": null,
+        "forwardMarketCapSales": null,
+        "forwardPE": null,
+        "historicalEvSalesPercentile": null,
+        "historicalPePercentile": null,
+        "revenueEstimateRevision30d": null,
+        "revenueEstimateRevision90d": null,
+        "revenueGrowthFY1": null
+      },
+      "framework": "storage-cycle",
+      "metrics": {},
+      "peerGroup": "Storage",
+      "providerSymbol": "STX"
+    },
+    "TER": {
+      "currency": "USD",
+      "derived": {
+        "epsEstimateRevision30d": null,
+        "epsEstimateRevision90d": null,
+        "epsGrowthFY1": null,
+        "forwardEvSales": null,
+        "forwardMarketCapSales": null,
+        "forwardPE": null,
+        "historicalEvSalesPercentile": null,
+        "historicalPePercentile": null,
+        "revenueEstimateRevision30d": null,
+        "revenueEstimateRevision90d": null,
+        "revenueGrowthFY1": null
+      },
+      "framework": "test-complexity",
+      "metrics": {},
+      "peerGroup": "Semiconductor test",
+      "providerSymbol": "TER"
+    },
+    "TSM": {
+      "currency": "USD",
+      "derived": {
+        "epsEstimateRevision30d": null,
+        "epsEstimateRevision90d": null,
+        "epsGrowthFY1": null,
+        "forwardEvSales": null,
+        "forwardMarketCapSales": null,
+        "forwardPE": null,
+        "historicalEvSalesPercentile": null,
+        "historicalPePercentile": null,
+        "revenueEstimateRevision30d": null,
+        "revenueEstimateRevision90d": null,
+        "revenueGrowthFY1": null
+      },
+      "framework": "capital-intensive-foundry",
+      "metrics": {
+        "enterpriseValue": 60734299000000.0,
+        "evToEbitdaTTM": 18.632787949461566,
+        "evToSalesTTM": 13.677380569540492,
+        "fcfYield": 0.017785630792320144,
+        "netDebtToEbitda": -0.6601458058946372,
+        "peTTM": 28.109423901703956,
+        "priceToSalesTTM": 14.161959981011114,
+        "roic": 0.2714520021377411
+      },
+      "peerGroup": "Foundries",
+      "providerSymbol": "TSM"
+    },
+    "TXN": {
+      "currency": "USD",
+      "derived": {
+        "epsEstimateRevision30d": null,
+        "epsEstimateRevision90d": null,
+        "epsGrowthFY1": null,
+        "forwardEvSales": null,
+        "forwardMarketCapSales": null,
+        "forwardPE": null,
+        "historicalEvSalesPercentile": null,
+        "historicalPePercentile": null,
+        "revenueEstimateRevision30d": null,
+        "revenueEstimateRevision90d": null,
+        "revenueGrowthFY1": null
+      },
+      "framework": "analog-cycle",
+      "metrics": {},
+      "peerGroup": "Analog / embedded",
+      "providerSymbol": "TXN"
+    },
+    "UMC": {
+      "currency": "USD",
+      "derived": {
+        "epsEstimateRevision30d": null,
+        "epsEstimateRevision90d": null,
+        "epsGrowthFY1": null,
+        "forwardEvSales": null,
+        "forwardMarketCapSales": null,
+        "forwardPE": null,
+        "historicalEvSalesPercentile": null,
+        "historicalPePercentile": null,
+        "revenueEstimateRevision30d": null,
+        "revenueEstimateRevision90d": null,
+        "revenueGrowthFY1": null
+      },
+      "framework": "capital-intensive-foundry",
+      "metrics": {},
+      "peerGroup": "Foundries",
+      "providerSymbol": "UMC"
+    },
+    "WDC": {
+      "currency": "USD",
+      "derived": {
+        "epsEstimateRevision30d": null,
+        "epsEstimateRevision90d": null,
+        "epsGrowthFY1": null,
+        "forwardEvSales": null,
+        "forwardMarketCapSales": null,
+        "forwardPE": null,
+        "historicalEvSalesPercentile": null,
+        "historicalPePercentile": null,
+        "revenueEstimateRevision30d": null,
+        "revenueEstimateRevision90d": null,
+        "revenueGrowthFY1": null
+      },
+      "framework": "storage-cycle",
+      "metrics": {},
+      "peerGroup": "Storage",
+      "providerSymbol": "WDC"
+    },
+    "WOLF": {
+      "currency": "USD",
+      "derived": {
+        "epsEstimateRevision30d": null,
+        "epsEstimateRevision90d": null,
+        "epsGrowthFY1": null,
+        "forwardEvSales": null,
+        "forwardMarketCapSales": null,
+        "forwardPE": null,
+        "historicalEvSalesPercentile": null,
+        "historicalPePercentile": null,
+        "revenueEstimateRevision30d": null,
+        "revenueEstimateRevision90d": null,
+        "revenueGrowthFY1": null
+      },
+      "framework": "turnaround-distress",
+      "metrics": {},
+      "peerGroup": "Power semiconductor turnaround",
+      "providerSymbol": "WOLF"
+    }
   },
-  "companies": {}
+  "meta": {
+    "earningsCalendar": [
+      {
+        "date": "2026-10-15",
+        "epsEstimated": 4.45,
+        "revenueEstimated": 44979790000,
+        "symbol": "TSM",
+        "time": null
+      }
+    ],
+    "errorCount": 280,
+    "errors": [
+      "key-metrics-ttm AMBA: HTTP Error 429: Too Many Requests",
+      "ratios-ttm AMBA: HTTP Error 429: Too Many Requests",
+      "financial-estimates AMBA: HTTP Error 429: Too Many Requests",
+      "income-statement-ttm AMBA: HTTP Error 429: Too Many Requests",
+      "key-metrics AMBA: HTTP Error 429: Too Many Requests",
+      "key-metrics-ttm LSCC: HTTP Error 429: Too Many Requests",
+      "ratios-ttm LSCC: HTTP Error 429: Too Many Requests",
+      "financial-estimates LSCC: HTTP Error 429: Too Many Requests",
+      "income-statement-ttm LSCC: HTTP Error 429: Too Many Requests",
+      "key-metrics LSCC: HTTP Error 429: Too Many Requests",
+      "key-metrics-ttm MTSI: HTTP Error 429: Too Many Requests",
+      "ratios-ttm MTSI: HTTP Error 429: Too Many Requests",
+      "financial-estimates MTSI: HTTP Error 429: Too Many Requests",
+      "income-statement-ttm MTSI: HTTP Error 429: Too Many Requests",
+      "key-metrics MTSI: HTTP Error 429: Too Many Requests",
+      "key-metrics-ttm FORM: HTTP Error 429: Too Many Requests",
+      "ratios-ttm FORM: HTTP Error 429: Too Many Requests",
+      "financial-estimates FORM: HTTP Error 429: Too Many Requests",
+      "income-statement-ttm FORM: HTTP Error 429: Too Many Requests",
+      "key-metrics FORM: HTTP Error 429: Too Many Requests"
+    ],
+    "estimatesUpdatedAt": "2026-07-31T21:08:43Z",
+    "fundamentalsUpdatedAt": "2026-07-31T21:08:43Z",
+    "generatedAt": "2026-07-31T21:08:43Z",
+    "historicalUpdatedAt": "2026-07-31T21:08:43Z",
+    "note": "Quote freshness and endpoint entitlements depend on the configured FMP subscription. Company-reported research remains separately sourced from issuer materials.",
+    "provider": "Financial Modeling Prep",
+    "providerUrl": "https://financialmodelingprep.com/",
+    "quotesUpdatedAt": null,
+    "status": "partial",
+    "universeCount": 57
+  }
 }
