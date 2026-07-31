@@ -1,0 +1,12 @@
+{
+  "meta": {
+    "provider": "Not configured",
+    "quotesUpdatedAt": null,
+    "fundamentalsUpdatedAt": null,
+    "estimatesUpdatedAt": null,
+    "historicalUpdatedAt": null,
+    "status": "static-fallback",
+    "note": "Add the FMP_API_KEY GitHub repository secret and run the Update semiconductor market data workflow to populate this file."
+  },
+  "companies": {}
+}
