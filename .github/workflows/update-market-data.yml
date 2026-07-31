@@ -1,0 +1,64 @@
+name: Update semiconductor market data
+
+on:
+  workflow_dispatch:
+    inputs:
+      deep_refresh:
+        description: "Force fundamentals, consensus estimates and historical valuation refresh"
+        required: false
+        default: false
+        type: boolean
+  schedule:
+    # Near-real-time quotes during the U.S. trading day. The heavier fundamentals/estimate layer refreshes about once per day.
+    - cron: "17,47 9-16 * * 1-5"
+      timezone: "America/New_York"
+    # One post-close refresh and one daily weekend/overnight integrity refresh.
+    - cron: "20 18 * * 1-5"
+      timezone: "America/New_York"
+    - cron: "20 8 * * *"
+      timezone: "America/New_York"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: semiconductor-market-data
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Update data
+        env:
+          FMP_API_KEY: ${{ secrets.FMP_API_KEY }}
+          FORCE_DEEP: ${{ inputs.deep_refresh }}
+        run: |
+          if [ "$FORCE_DEEP" = "true" ]; then
+            python scripts/update_data.py --deep
+          else
+            python scripts/update_data.py
+          fi
+
+      - name: Validate generated files
+        run: python scripts/validate_data.py
+
+      - name: Commit changed data
+        run: |
+          if git diff --quiet -- data/live.json data/estimate-history.json; then
+            echo "No data changes to commit."
+            exit 0
+          fi
+          git config user.name "semiconductor-map-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/live.json data/estimate-history.json
+          git commit -m "data: refresh semiconductor market snapshot [skip ci]"
+          git push
