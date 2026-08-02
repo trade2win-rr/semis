@@ -1178,7 +1178,7 @@
         "time": null
       }
     ],
-    "errorCount": 287,
+    "errorCount": 280,
     "errors": [
       "key-metrics-ttm AMBA: HTTP Error 429: Too Many Requests",
       "ratios-ttm AMBA: HTTP Error 429: Too Many Requests",
@@ -1201,10 +1201,10 @@
       "income-statement-ttm FORM: HTTP Error 429: Too Many Requests",
       "key-metrics FORM: HTTP Error 429: Too Many Requests"
     ],
-    "estimatesUpdatedAt": "2026-08-01T15:45:48Z",
-    "fundamentalsUpdatedAt": "2026-08-01T15:45:48Z",
-    "generatedAt": "2026-08-01T15:45:48Z",
-    "historicalUpdatedAt": "2026-08-01T15:45:48Z",
+    "estimatesUpdatedAt": "2026-08-02T15:49:26Z",
+    "fundamentalsUpdatedAt": "2026-08-02T15:49:26Z",
+    "generatedAt": "2026-08-02T15:49:26Z",
+    "historicalUpdatedAt": "2026-08-02T15:49:26Z",
     "note": "Quote freshness and endpoint entitlements depend on the configured FMP subscription. Company-reported research remains separately sourced from issuer materials.",
     "provider": "Financial Modeling Prep",
     "providerUrl": "https://financialmodelingprep.com/",
