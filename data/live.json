@@ -1187,11 +1187,11 @@
     ],
     "errorCount": 1,
     "errors": [
-      "batch-quote : HTTP Error 429: Too Many Requests"
+      "batch-quote : HTTP Error 402: Payment Required"
     ],
     "estimatesUpdatedAt": "2026-08-11T15:34:33Z",
     "fundamentalsUpdatedAt": "2026-08-11T15:34:33Z",
-    "generatedAt": "2026-08-11T16:14:18Z",
+    "generatedAt": "2026-08-11T19:49:37Z",
     "historicalUpdatedAt": "2026-08-11T15:34:33Z",
     "note": "Quote freshness and endpoint entitlements depend on the configured FMP subscription. Company-reported research remains separately sourced from issuer materials.",
     "provider": "Financial Modeling Prep",
