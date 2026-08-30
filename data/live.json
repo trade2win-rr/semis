@@ -1172,8 +1172,8 @@
     "earningsCalendar": [
       {
         "date": "2026-11-18",
-        "epsEstimated": 2.4,
-        "revenueEstimated": 108285400000,
+        "epsEstimated": 2.46,
+        "revenueEstimated": 108687200000,
         "symbol": "NVDA",
         "time": null
       },
@@ -1187,12 +1187,12 @@
       {
         "date": "2026-10-15",
         "epsEstimated": 4.45,
-        "revenueEstimated": 45052550000,
+        "revenueEstimated": 45031400000,
         "symbol": "TSM",
         "time": null
       }
     ],
-    "errorCount": 287,
+    "errorCount": 280,
     "errors": [
       "key-metrics-ttm AMBA: HTTP Error 429: Too Many Requests",
       "ratios-ttm AMBA: HTTP Error 429: Too Many Requests",
@@ -1215,10 +1215,10 @@
       "income-statement-ttm FORM: HTTP Error 429: Too Many Requests",
       "key-metrics FORM: HTTP Error 429: Too Many Requests"
     ],
-    "estimatesUpdatedAt": "2026-08-29T16:44:52Z",
-    "fundamentalsUpdatedAt": "2026-08-29T16:44:52Z",
-    "generatedAt": "2026-08-29T16:44:52Z",
-    "historicalUpdatedAt": "2026-08-29T16:44:52Z",
+    "estimatesUpdatedAt": "2026-08-30T16:42:50Z",
+    "fundamentalsUpdatedAt": "2026-08-30T16:42:50Z",
+    "generatedAt": "2026-08-30T16:42:50Z",
+    "historicalUpdatedAt": "2026-08-30T16:42:50Z",
     "note": "Quote freshness and endpoint entitlements depend on the configured FMP subscription. Company-reported research remains separately sourced from issuer materials.",
     "provider": "Financial Modeling Prep",
     "providerUrl": "https://financialmodelingprep.com/",
