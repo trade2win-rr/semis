@@ -237,13 +237,13 @@
       },
       "framework": "compute-growth",
       "metrics": {
-        "enterpriseValue": 862361173699.0,
-        "evToEbitdaTTM": 80.45915037311066,
-        "evToSalesTTM": 20.87788823868781,
-        "fcfYield": 0.009735033161487671,
+        "enterpriseValue": 862361178458.0,
+        "evToEbitdaTTM": 80.45915081713007,
+        "evToSalesTTM": 20.877888353903884,
+        "fcfYield": 0.00973503310781463,
         "netDebtToEbitda": -0.07557380108229148,
         "peTTM": 134.2005076142132,
-        "priceToSalesTTM": 20.8974984553686,
+        "priceToSalesTTM": 20.897498570584677,
         "roic": 0.07577286290131517
       },
       "peerGroup": "AI compute / custom silicon",
@@ -1172,7 +1172,7 @@
     "earningsCalendar": [
       {
         "date": "2027-01-21",
-        "epsEstimated": 5,
+        "epsEstimated": 5.06,
         "revenueEstimated": 52377520000,
         "symbol": "TSM",
         "time": null
@@ -1208,10 +1208,10 @@
       "income-statement-ttm FORM: HTTP Error 429: Too Many Requests",
       "key-metrics FORM: HTTP Error 429: Too Many Requests"
     ],
-    "estimatesUpdatedAt": "2026-10-17T15:37:55Z",
-    "fundamentalsUpdatedAt": "2026-10-17T15:37:55Z",
-    "generatedAt": "2026-10-17T15:37:55Z",
-    "historicalUpdatedAt": "2026-10-17T15:37:55Z",
+    "estimatesUpdatedAt": "2026-10-18T15:53:17Z",
+    "fundamentalsUpdatedAt": "2026-10-18T15:53:17Z",
+    "generatedAt": "2026-10-18T15:53:17Z",
+    "historicalUpdatedAt": "2026-10-18T15:53:17Z",
     "note": "Quote freshness and endpoint entitlements depend on the configured FMP subscription. Company-reported research remains separately sourced from issuer materials.",
     "provider": "Financial Modeling Prep",
     "providerUrl": "https://financialmodelingprep.com/",
