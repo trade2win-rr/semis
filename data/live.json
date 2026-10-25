@@ -1173,7 +1173,7 @@
       {
         "date": "2027-01-21",
         "epsEstimated": 5.16,
-        "revenueEstimated": 52377420000,
+        "revenueEstimated": 52578780000,
         "symbol": "TSM",
         "time": null
       }
@@ -1201,10 +1201,10 @@
       "income-statement-ttm FORM: HTTP Error 429: Too Many Requests",
       "key-metrics FORM: HTTP Error 429: Too Many Requests"
     ],
-    "estimatesUpdatedAt": "2026-10-24T15:58:50Z",
-    "fundamentalsUpdatedAt": "2026-10-24T15:58:50Z",
-    "generatedAt": "2026-10-24T15:58:50Z",
-    "historicalUpdatedAt": "2026-10-24T15:58:50Z",
+    "estimatesUpdatedAt": "2026-10-25T16:24:31Z",
+    "fundamentalsUpdatedAt": "2026-10-25T16:24:31Z",
+    "generatedAt": "2026-10-25T16:24:31Z",
+    "historicalUpdatedAt": "2026-10-25T16:24:31Z",
     "note": "Quote freshness and endpoint entitlements depend on the configured FMP subscription. Company-reported research remains separately sourced from issuer materials.",
     "provider": "Financial Modeling Prep",
     "providerUrl": "https://financialmodelingprep.com/",
