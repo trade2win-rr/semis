@@ -237,13 +237,13 @@
       },
       "framework": "compute-growth",
       "metrics": {
-        "enterpriseValue": 827148323026.0,
-        "evToEbitdaTTM": 73.06963984328623,
-        "evToSalesTTM": 18.2046906203451,
-        "fcfYield": 0.008546135632864835,
+        "enterpriseValue": 870987855245.0,
+        "evToEbitdaTTM": 76.94239003931095,
+        "evToSalesTTM": 19.169553993419314,
+        "fcfYield": 0.008115233973934525,
         "netDebtToEbitda": 0.13356890459363957,
-        "peTTM": 108.02789699570816,
-        "priceToSalesTTM": 18.171413043093583,
+        "peTTM": 113.76394849785407,
+        "priceToSalesTTM": 19.136276416167796,
         "roic": 0.09547088032103436
       },
       "peerGroup": "AI compute / custom silicon",
@@ -766,14 +766,14 @@
       },
       "framework": "compute-growth",
       "metrics": {
-        "enterpriseValue": 3763003000000.0,
-        "evToEbitdaTTM": 16.088497353502014,
-        "evToSalesTTM": 12.420422551482165,
-        "fcfYield": 0.03389912843319225,
-        "netDebtToEbitda": 0.07018991508974151,
-        "peTTM": 19.55471698113207,
-        "priceToSalesTTM": 12.366235489439514,
-        "roic": 0.5950424906817126
+        "enterpriseValue": 3647195000000.0,
+        "evToEbitdaTTM": 13.30301681846201,
+        "evToSalesTTM": 10.080498718930258,
+        "fcfYield": 0.040878625757805646,
+        "netDebtToEbitda": 0.03304238719302021,
+        "peTTM": 16.145454545454545,
+        "priceToSalesTTM": 10.055460507950372,
+        "roic": 0.6284636452482232
       },
       "peerGroup": "AI compute / custom silicon",
       "providerSymbol": "NVDA"
@@ -1075,13 +1075,13 @@
       },
       "framework": "capital-intensive-foundry",
       "metrics": {
-        "enterpriseValue": 53634927000000.0,
-        "evToEbitdaTTM": 14.624264014200294,
-        "evToSalesTTM": 10.84669604557661,
-        "fcfYield": 0.026691180870333765,
-        "netDebtToEbitda": -0.7193890711187093,
-        "peTTM": 22.084266232444534,
-        "priceToSalesTTM": 11.38026098842485,
+        "enterpriseValue": 53847064362000.0,
+        "evToEbitdaTTM": 14.682106039214405,
+        "evToSalesTTM": 10.889596998635136,
+        "fcfYield": 0.02662982183385024,
+        "netDebtToEbitda": -0.6969010854716935,
+        "peTTM": 22.135151638510077,
+        "priceToSalesTTM": 11.40648278793735,
         "roic": 0.28798272205068237
       },
       "peerGroup": "Foundries",
@@ -1171,9 +1171,16 @@
   "meta": {
     "earningsCalendar": [
       {
+        "date": "2027-02-24",
+        "epsEstimated": 2.82,
+        "revenueEstimated": 130634400000,
+        "symbol": "NVDA",
+        "time": null
+      },
+      {
         "date": "2027-02-02",
         "epsEstimated": 2.9,
-        "revenueEstimated": 17083750000,
+        "revenueEstimated": 17083740000,
         "symbol": "AMD",
         "time": null
       },
@@ -1185,14 +1192,33 @@
         "time": null
       }
     ],
-    "errorCount": 1,
+    "errorCount": 280,
     "errors": [
-      "batch-quote : HTTP Error 429: Too Many Requests"
+      "key-metrics-ttm AMBA: HTTP Error 429: Too Many Requests",
+      "ratios-ttm AMBA: HTTP Error 429: Too Many Requests",
+      "financial-estimates AMBA: HTTP Error 429: Too Many Requests",
+      "income-statement-ttm AMBA: HTTP Error 429: Too Many Requests",
+      "key-metrics AMBA: HTTP Error 429: Too Many Requests",
+      "key-metrics-ttm LSCC: HTTP Error 429: Too Many Requests",
+      "ratios-ttm LSCC: HTTP Error 429: Too Many Requests",
+      "financial-estimates LSCC: HTTP Error 429: Too Many Requests",
+      "income-statement-ttm LSCC: HTTP Error 429: Too Many Requests",
+      "key-metrics LSCC: HTTP Error 429: Too Many Requests",
+      "key-metrics-ttm MTSI: HTTP Error 429: Too Many Requests",
+      "ratios-ttm MTSI: HTTP Error 429: Too Many Requests",
+      "financial-estimates MTSI: HTTP Error 429: Too Many Requests",
+      "income-statement-ttm MTSI: HTTP Error 429: Too Many Requests",
+      "key-metrics MTSI: HTTP Error 429: Too Many Requests",
+      "key-metrics-ttm FORM: HTTP Error 429: Too Many Requests",
+      "ratios-ttm FORM: HTTP Error 429: Too Many Requests",
+      "financial-estimates FORM: HTTP Error 429: Too Many Requests",
+      "income-statement-ttm FORM: HTTP Error 429: Too Many Requests",
+      "key-metrics FORM: HTTP Error 429: Too Many Requests"
     ],
-    "estimatesUpdatedAt": "2026-11-17T21:47:42Z",
-    "fundamentalsUpdatedAt": "2026-11-17T21:47:42Z",
-    "generatedAt": "2026-11-18T04:32:53Z",
-    "historicalUpdatedAt": "2026-11-17T21:47:42Z",
+    "estimatesUpdatedAt": "2026-11-18T21:26:46Z",
+    "fundamentalsUpdatedAt": "2026-11-18T21:26:46Z",
+    "generatedAt": "2026-11-18T21:26:46Z",
+    "historicalUpdatedAt": "2026-11-18T21:26:46Z",
     "note": "Quote freshness and endpoint entitlements depend on the configured FMP subscription. Company-reported research remains separately sourced from issuer materials.",
     "provider": "Financial Modeling Prep",
     "providerUrl": "https://financialmodelingprep.com/",
