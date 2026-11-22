@@ -1172,7 +1172,7 @@
     "earningsCalendar": [
       {
         "date": "2027-02-24",
-        "epsEstimated": 2.84,
+        "epsEstimated": 2.87,
         "revenueEstimated": 130789100000,
         "symbol": "NVDA",
         "time": null
@@ -1215,10 +1215,10 @@
       "income-statement-ttm FORM: HTTP Error 429: Too Many Requests",
       "key-metrics FORM: HTTP Error 429: Too Many Requests"
     ],
-    "estimatesUpdatedAt": "2026-11-21T20:06:57Z",
-    "fundamentalsUpdatedAt": "2026-11-21T20:06:57Z",
-    "generatedAt": "2026-11-21T20:06:57Z",
-    "historicalUpdatedAt": "2026-11-21T20:06:57Z",
+    "estimatesUpdatedAt": "2026-11-22T20:21:48Z",
+    "fundamentalsUpdatedAt": "2026-11-22T20:21:48Z",
+    "generatedAt": "2026-11-22T20:21:48Z",
+    "historicalUpdatedAt": "2026-11-22T20:21:48Z",
     "note": "Quote freshness and endpoint entitlements depend on the configured FMP subscription. Company-reported research remains separately sourced from issuer materials.",
     "provider": "Financial Modeling Prep",
     "providerUrl": "https://financialmodelingprep.com/",
